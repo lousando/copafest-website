@@ -1,5 +1,6 @@
 <template>
 	<div>
+    <navbar/>
 		<header class="header">
       <div class="header__rays" />
       <img
@@ -30,6 +31,16 @@
 	</div>
 </template>
 
+<script>
+	import navbar from "../components/navbar";
+
+	export default {
+  	components: {
+  		navbar
+    }
+  }
+</script>
+
 <style lang="scss">
 @import "../assets/global.scss";
 
@@ -52,7 +63,7 @@ body {
 		background-image: url("/imgs/arizona_rays.svg");
 		background-size: cover;
 		background-position: bottom;
-		height: 30vh;
+		height: 15vh;
 	}
 
   @mixin vertical-adjustment {
