@@ -1,19 +1,17 @@
 <template>
 	<div class="columns">
 		<div class="column has-text-centered">
-      <div class="card">
-        <div class="card-content">
-          <p>
-            Please Join Us For A Day Full Of Vendor Exhibits,
-            Seminars, VE Testing, Card Checking, Prizes And More!​
-          </p>
-          <a
-href="/flyers/copafest_2020_flyer.jpg"
-target="_blank">
-            Please click here for the official flyer.
-          </a>
-        </div>
-      </div>
+			<div class="card">
+				<div class="card-content">
+					<p>
+						Please Join Us For A Day Full Of Vendor Exhibits,
+						Seminars, VE Testing, Card Checking, Prizes And More!​
+					</p>
+					<a href="/flyers/copafest_2020_flyer.jpg" target="_blank">
+						Please click here for the official flyer.
+					</a>
+				</div>
+			</div>
 
 			<div class="is-size-6" />
 			<hr />
@@ -60,14 +58,12 @@ target="_blank">
 
 				<div style="display: none;">
 					<select name="os0">
-						<option value="Minimum 5 ticket purchase"
->
-              Minimum 5 ticket purchase $10.00 USD
-            </option>
-						<option value="More then 5 tickets" selected="true"
->
+						<option value="Minimum 5 ticket purchase">
+							Minimum 5 ticket purchase $10.00 USD
+						</option>
+						<option value="More then 5 tickets" selected="true">
 							More than 5 tickets $2.00 USD
-            </option>
+						</option>
 					</select>
 				</div>
 
@@ -126,16 +122,16 @@ target="_blank">
 						Maricopa Road, Maricopa AZ
 					</div>
 					<div>
-            <iframe
-              width="600"
-              height="450"
-              frameborder="0"
-              style="border:0"
-              :src="
-                `https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ4yE0slTlKocRxtZoIp7yU4o&key=${NUXT_ENV_GMAPS_API_KEY}`
-              "
-              allowfullscreen
-            ></iframe>
+						<!--            <iframe-->
+						<!--              width="100%"-->
+						<!--              height="450"-->
+						<!--              frameborder="0"-->
+						<!--              style="border:0"-->
+						<!--              :src="-->
+						<!--                `https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ4yE0slTlKocRxtZoIp7yU4o&key=${NUXT_ENV_GMAPS_API_KEY}`-->
+						<!--              "-->
+						<!--              allowfullscreen-->
+						<!--            ></iframe>-->
 					</div>
 					<p>
 						There are also many activities available inside the
@@ -154,7 +150,7 @@ target="_blank">
 				</div>
 				<div class="column">
 					<nuxt-link to="/volunteer">
-            Volunteer
+						Volunteer
 					</nuxt-link>
 				</div>
 			</div>
@@ -173,8 +169,7 @@ target="_blank">
 							value="AL3TRQJ78JY6E"
 						/>
 
-						<button type="submit" class="button-donate"
->
+						<button type="submit" class="button-donate">
 							Donate
 						</button>
 
