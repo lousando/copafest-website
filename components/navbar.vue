@@ -29,7 +29,7 @@
 					Volunteer
 				</nuxt-link>
 			</div>
-			<div class="navbar-end">
+			<div class="navbar-end is-hidden-mobile">
 				<div class="navbar-item">
 					Saturday, October 24th, 2020
 				</div>
