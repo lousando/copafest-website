@@ -88,8 +88,8 @@ form {
 		display: flex;
 		justify-content: flex-end;
 		padding: 0.5em;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
 
 		label {
 			padding: 0.5em 1em 0.5em 0;

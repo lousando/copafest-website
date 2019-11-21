@@ -1,27 +1,27 @@
 <template>
 	<div>
-    <navbar/>
+		<navbar />
 		<header class="header">
-      <div class="header__rays" />
-      <img
-        class="header__az-star"
-        src="/imgs/arizona_star.svg"
-        alt="AZ Star"
-      />
-      <div class="header__upper">
-        <div class="header__upper-left">
-          Maricopa ARA
-        </div>
-        <div class="header__upper-right">
-          Presents
-        </div>
-      </div>
-      <div class="header__main-text">
-        CopaFest 2020
-      </div>
-      <div class="header__sub-text">
-        Saturday, October 24th, 2020
-      </div>
+			<div class="header__rays" />
+			<img
+				class="header__az-star"
+				src="/imgs/arizona_star.svg"
+				alt="AZ Star"
+			/>
+			<div class="header__upper">
+				<div class="header__upper-left">
+					Maricopa ARA
+				</div>
+				<div class="header__upper-right">
+					Presents
+				</div>
+			</div>
+			<div class="header__main-text">
+				CopaFest 2020
+			</div>
+			<div class="header__sub-text">
+				Saturday, October 24th, 2020
+			</div>
 		</header>
 		<nuxt />
 		<footer>
@@ -35,10 +35,10 @@
 	import navbar from "../components/navbar";
 
 	export default {
-  	components: {
-  		navbar
-    }
-  }
+	components: {
+		navbar
+	}
+};
 </script>
 
 <style lang="scss">
@@ -57,7 +57,7 @@ body {
 .header {
 	text-align: center;
 	font-family: "Lalezar", sans-serif;
-  background-color: $az-blue;
+	background-color: $az-blue;
 
 	&__rays {
 		background-image: url("/imgs/arizona_rays.svg");
@@ -66,14 +66,14 @@ body {
 		height: 15vh;
 	}
 
-  @mixin vertical-adjustment {
-    transform: translateY(-80px);
-  }
+	@mixin vertical-adjustment {
+		transform: translateY(-80px);
+	}
 
 	&__az-star {
 		width: 10rem;
 		height: 10rem;
-    @include vertical-adjustment;
+		@include vertical-adjustment;
 	}
 
 	@mixin header-text-properties {
@@ -85,11 +85,11 @@ body {
 
 	&__upper {
 		display: flex;
-    align-items: baseline;
+		align-items: baseline;
 		justify-content: space-around;
 		@include header-text-properties;
-    @include vertical-adjustment;
-  }
+		@include vertical-adjustment;
+	}
 
 	&__upper-left {
 		font-size: 1.5rem;
@@ -103,15 +103,14 @@ body {
 		font-size: 4rem;
 		color: white;
 		@include header-text-properties;
-    @include vertical-adjustment;
+		@include vertical-adjustment;
 	}
 
-  &__sub-text {
-    font-size: 2.3rem;
-    color: white;
-    @include header-text-properties;
-    @include vertical-adjustment;
-  }
-
+	&__sub-text {
+		font-size: 2.3rem;
+		color: white;
+		@include header-text-properties;
+		@include vertical-adjustment;
+	}
 }
 </style>
