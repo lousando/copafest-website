@@ -35,7 +35,7 @@
 
 body {
 	color: black;
-	background: white;
+	background: whitesmoke;
 	font-family: "Istok Web", sans-serif;
 }
 </style>

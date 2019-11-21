@@ -3,121 +3,215 @@
 		<intro-banner />
 		<div class="columns">
 			<div class="column has-text-centered">
-				<div class="card">
-					<div class="card-content">
-						<p>
-							Please Join Us For A Day Full Of Vendor Exhibits,
-							Seminars, VE Testing, Card Checking, Prizes And
-							More!​
-						</p>
-						<a
-							href="/flyers/copafest_2020_flyer.jpg"
+				<div class="box">
+					<p>
+						Please Join Us For A Day Full Of Vendor Exhibits,
+						Seminars, VE Testing, Card Checking, Prizes And More!​
+					</p>
+					<a href="/flyers/copafest_2020_flyer.jpg" target="_blank">
+						Please click here for the official flyer.
+					</a>
+				</div>
+
+				<div class="box">
+					<p>
+						Buy your raffle tickets now for a chance to win any of
+						these great prizes:
+					</p>
+				</div>
+
+				<div class="level grand-prize-container">
+					<div class="level-item">
+						<div class="card">
+							<div class="card-header">
+								<div class="card-header-title">
+									1st Prize
+								</div>
+							</div>
+							<div class="card-image">
+								<figure class="image">
+									<img
+										src="imgs/prizes/prize_1.jpg"
+										alt="Xiegu G90 SDR 20W HF"
+										title="Xiegu G90 SDR 20W HF"
+									/>
+								</figure>
+							</div>
+							<div class="card-content">
+								Xiegu G90 SDR 20W HF
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="level minor-prize-container">
+					<div class="level-item">
+						<div class="card">
+							<div class="card-header">
+								<div class="card-header-title">
+									2nd Prize
+								</div>
+							</div>
+							<div class="card-image">
+								<figure class="image">
+									<img
+										src="imgs/prizes/prize_2.jpg"
+										alt="Icom IC-2730 Dual Band D-Star Mobile"
+										title="Icom IC-2730 Dual Band D-Star Mobile"
+									/>
+								</figure>
+							</div>
+							<div class="card-content">
+								Icom IC-2730 Dual Band D-Star Mobile
+							</div>
+						</div>
+					</div>
+					<div class="level-item">
+						<div class="card">
+							<div class="card-header">
+								<div class="card-header-title">
+									3rd Prize
+								</div>
+							</div>
+							<div class="card-image">
+								<figure class="image is-2by3">
+									<img
+										src="imgs/prizes/prize_3.jpg"
+										alt="Yaesu FT-70DR Dual Band Fusion"
+										title="Yaesu FT-70DR Dual Band Fusion"
+									/>
+								</figure>
+							</div>
+							<div class="card-content">
+								Yaesu FT-70DR Dual Band Fusion
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="box">
+					<div class="raffle-button-container">
+						<form
 							target="_blank"
+							action="https://www.paypal.com/cgi-bin/webscr"
+							method="post"
 						>
-							Please click here for the official flyer.
-						</a>
+							<input type="hidden" name="cmd" value="_s-xclick" />
+							<input
+								type="hidden"
+								name="hosted_button_id"
+								value="X9ALR8DMAEFTN"
+							/>
+							<input
+								type="hidden"
+								name="on0"
+								value="Raffle tickets ..."
+							/>
+							<input
+								type="hidden"
+								name="os0"
+								value="14 raffle tickets @"
+							/>
+							<input
+								type="hidden"
+								name="currency_code"
+								value="USD"
+							/>
+							<button type="submit" class="payment-button">
+								<h3 class="payment-button__text">
+									Buy 14 raffle tickets for $10.00 USD*
+								</h3>
+							</button>
+						</form>
+						<form
+							target="_blank"
+							action="https://www.paypal.com/cgi-bin/webscr"
+							method="post"
+						>
+							<input type="hidden" name="cmd" value="_s-xclick" />
+							<input
+								type="hidden"
+								name="hosted_button_id"
+								value="X9ALR8DMAEFTN"
+							/>
+							<input
+								type="hidden"
+								name="on0"
+								value="Raffle tickets ..."
+							/>
+							<input
+								type="hidden"
+								name="os0"
+								value="30 raffle tickets @"
+							/>
+							<input
+								type="hidden"
+								name="currency_code"
+								value="USD"
+							/>
+
+							<button type="submit" class="payment-button">
+								<h3 class="payment-button__text">
+									Buy 30 raffle tickets for $20.00 USD*
+								</h3>
+							</button>
+						</form>
 					</div>
-				</div>
-
-				<div class="card">
-					<div class="card-content"></div>
-				</div>
-
-				<div class="is-size-6" />
-				<hr />
-				<i>
-					Buy your raffle tickets now for a chance to win any of these
-					great prizes!
-				</i>
-
-				<div class="prize-container">
-					<img
-						src="imgs/prizes/prize_1.jpg"
-						alt="Xiegu G90 SDR 20W HF"
-						title="Xiegu G90 SDR 20W HF"
-					/>
-					<img
-						src="imgs/prizes/prize_2.jpg"
-						alt="Icom IC-2730 Dual Band D-Star Mobile"
-						title="Icom IC-2730 Dual Band D-Star Mobile"
-					/>
-					<img
-						src="imgs/prizes/prize_3.jpg"
-						alt="Yaesu FT-70DR Dual Band Fusion"
-						title="Yaesu FT-70DR Dual Band Fusion"
-					/>
-				</div>
-
-				<form
-					target="paypal"
-					action="https://www.paypal.com/cgi-bin/webscr"
-					method="post"
-				>
-					<input type="hidden" name="cmd" value="_s-xclick" />
-					<input
-						type="hidden"
-						name="hosted_button_id"
-						value="X9ALR8DMAEFTN"
-					/>
-
-					<input
-						type="hidden"
-						name="on0"
-						value="Raffle tickets requested"
-					/>
-
-					<div style="display: none;">
-						<select name="os0">
-							<option value="Minimum 5 ticket purchase">
-								Minimum 5 ticket purchase $10.00 USD
-							</option>
-							<option value="More then 5 tickets" selected="true">
-								More than 5 tickets $2.00 USD
-							</option>
-						</select>
-					</div>
-
-					<input type="hidden" name="currency_code" value="USD" />
-
-					<button
-						type="submit"
-						style="cursor: pointer; background-color: transparent; border: none"
-					>
-						<h3 style="color: red; font-family: sans-serif;">
-							Please click here to purchase raffle tickets*
-						</h3>
-						<input
-							type="image"
-							src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"
-							border="0"
-							name="submit"
-							alt="Buy Raffle Tickets"
-						/>
-					</button>
 
 					<p>
 						<i>
 							*All ticket sales final.<br />
-							Last day to purchase tickets online wiil be Monday,
+							Minimum online purchase is $10. Smaller increments
+							will be available in-person the day of Copafest.<br />
+							Last day to purchase online tickets will be Monday,
 							October, 19th, 2020 @ 23:59 MST.<br />
-							Single Tickets will only be available at club
-							meetings, special events, or on the day of Copafest.
 						</i>
 					</p>
-				</form>
+				</div>
 
 				<div class="columns">
 					<div class="column">
-						General Public: Hours will be from 7:00 AM to 1:00 PM.
-						Admission donation is $5.00 per person** Raffle tickets
-						are $1 each. **Each admission comes with 1 entry for the
-						door prize. All door prizes are to be picked up by the
-						end of CopaFest. Any unclaimed door prizes will become
-						property of Maricopa Amateur Association. Tailgaters:
-						Set up begins at 5:00 AM ​Two parking spaces are $10.00.
-						Please click here to reserve your space before the big
-						day. ​ For more information, contact us at:
-						fest@copafest.org
+						<div class="is-size-3 has-text-weight-bold">
+							General Public:
+						</div>
+						<div>
+							<p>Hours will be from 7:00 AM to 1:00 PM.</p>
+							<p>
+								Admission donation is $5.00 per person<span
+									class="has-text-danger"
+									>**</span
+								>
+							</p>
+							<p>Raffle tickets are $1 each.</p>
+							<p class="has-text-danger">
+								**Each admission comes with 1 entry for the door
+								prize. All door prizes are to be picked up by
+								the end of CopaFest. Any unclaimed door prizes
+								will become property of Maricopa Amateur
+								Association.
+							</p>
+						</div>
+
+						<div class="is-size-3 has-text-weight-bold">
+							Tailgaters:
+						</div>
+						<p>Set up begins at 5:00 AM</p>
+						<p>
+							Two parking spaces are $10.00.
+						</p>
+						<p>
+							<nuxt-link to="/tailgater_registration">
+								Please click here to reserve your space before
+								the big day.
+							</nuxt-link>
+						</p>
+						<br />
+						<p>
+							For more information, contact us at:
+							<a href="mailto:fest@copafest.org">
+								fest@copafest.org
+							</a>
+						</p>
 					</div>
 					<div class="column">
 						<div>
@@ -125,16 +219,19 @@
 							16000 N Maricopa Road, Maricopa AZ
 						</div>
 						<div>
-							<!--            <iframe-->
-							<!--              width="100%"-->
-							<!--              height="450"-->
-							<!--              frameborder="0"-->
-							<!--              style="border:0"-->
-							<!--              :src="-->
-							<!--                `https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ4yE0slTlKocRxtZoIp7yU4o&key=${NUXT_ENV_GMAPS_API_KEY}`-->
-							<!--              "-->
-							<!--              allowfullscreen-->
-							<!--            ></iframe>-->
+							<figure class="image is-square">
+								<iframe
+									class="has-ratio"
+									width="200"
+									height="200"
+									frameborder="0"
+									style="border:0"
+									:src="
+										`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ4yE0slTlKocRxtZoIp7yU4o&key=${NUXT_ENV_GMAPS_API_KEY}`
+									"
+									allowfullscreen
+								></iframe>
+							</figure>
 						</div>
 						<p>
 							There are also many activities available inside the
@@ -145,17 +242,21 @@
 					</div>
 				</div>
 
-				<div class="columns">
-					<div class="column">
-						We are beginning the planning process for #CopaFest20!
-						If you are interested in being on the planning
-						committee, please click the Volunteer button and let us
-						know!
+				<div class="level">
+					<div class="level-left">
+						<div class="level-item">
+							We are beginning the planning process for
+							#CopaFest20! If you are interested in being on the
+							planning committee, please click the Volunteer
+							button and let us know!
+						</div>
 					</div>
-					<div class="column">
-						<nuxt-link to="/volunteer">
-							Volunteer
-						</nuxt-link>
+					<div class="level-right">
+						<div class="level-item">
+							<nuxt-link to="/volunteer">
+								Volunteer
+							</nuxt-link>
+						</div>
 					</div>
 				</div>
 
@@ -164,7 +265,7 @@
 						<form
 							action="https://www.paypal.com/cgi-bin/webscr"
 							method="post"
-							target="_top"
+							target="_blank"
 						>
 							<input type="hidden" name="cmd" value="_s-xclick" />
 							<input
@@ -172,9 +273,10 @@
 								name="hosted_button_id"
 								value="AL3TRQJ78JY6E"
 							/>
-
-							<button type="submit" class="button-donate">
-								Donate
+							<button type="submit" class="payment-button">
+								<div class="payment-button__text">
+									Donate
+								</div>
 							</button>
 						</form>
 					</div>
@@ -210,29 +312,36 @@
 <style scoped="true" lang="scss">
 @import "../assets/global";
 
-.prize-container {
-	display: flex;
-	flex-wrap: nowrap;
-	justify-content: center;
-
+.grand-prize-container {
 	img {
-		max-width: 30vw;
-		border-right: 1px solid lightgray;
-
-		&:last-child {
-			border-right: none;
-		}
+		transform: scale(0.3);
 	}
 }
 
-.button-donate {
+.minor-prize-container {
+	img {
+		transform: scale(0.3);
+	}
+}
+
+.raffle-button-container {
+	display: flex;
+	justify-content: center;
+}
+
+.payment-button {
 	margin-right: 1rem;
 	max-height: 4rem;
 	cursor: pointer;
-	background-color: #ffc439;
+	background-color: $az-yellow;
 	padding: 0.5rem;
 	border-radius: 2rem;
 	font-weight: bold;
-	font-size: 1.8rem;
+	font-size: 1.2rem;
+
+	&__text {
+		color: black;
+		font-family: sans-serif;
+	}
 }
 </style>
