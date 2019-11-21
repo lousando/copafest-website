@@ -54,4 +54,19 @@ export default {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.navbar-brand {
+	animation: fade-in 1s ease-in-out;
+}
+
+@keyframes fade-in {
+	0% {
+		transform: translateX(-5vw);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+</style>
