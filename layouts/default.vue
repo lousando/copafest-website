@@ -21,6 +21,9 @@
 	import navbar from "../components/navbar";
 
 	export default {
+	mounted() {
+		document.documentElement.classList.add("has-navbar-fixed-top");
+	},
 	components: {
 		navbar
 	}
