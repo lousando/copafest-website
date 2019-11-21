@@ -1,14 +1,18 @@
 <template>
-	<nav class="nav">
-		<nuxt-link class="nav__link" to="/">
-			Home
-		</nuxt-link>
-		<nuxt-link class="nav__link" to="/tailgater_registration">
-			Tailgater Registration
-		</nuxt-link>
-		<nuxt-link class="nav__link" to="/volunteer">
-			Volunteer
-		</nuxt-link>
+	<nav class="navbar is-black" role="navigation" aria-label="main navigation">
+		<div class="navbar-menu">
+			<div class="navbar-start">
+				<nuxt-link class="navbar-item" to="/">
+					Home
+				</nuxt-link>
+				<nuxt-link class="navbar-item" to="/tailgater_registration">
+					Tailgater Registration
+				</nuxt-link>
+				<nuxt-link class="navbar-item" to="/volunteer">
+					Volunteer
+				</nuxt-link>
+			</div>
+		</div>
 	</nav>
 </template>
 
@@ -19,20 +23,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.nav {
-	padding: 1rem;
-	background-color: black;
+.navbar {
 	opacity: 0.9;
 	position: sticky;
 	top: 0;
 	z-index: 10;
-
-	&__link {
-		color: white;
-		font-family: "Istok Web", sans-serif;
-		font-size: 1.2rem;
-		height: 2rem;
-		margin-right: 0.8rem;
-	}
 }
 </style>
