@@ -1,0 +1,77 @@
+<template>
+	<div class="intro-banner">
+		<div class="intro-banner__upper">
+			<div class="intro-banner__upper-left">Maricopa<br />ARA</div>
+			<div class="intro-banner__upper-middle">
+				<!-- spacer-->
+			</div>
+			<div class="intro-banner__upper-right">
+				Presents
+			</div>
+		</div>
+		<div class="intro-banner__main-text">
+			CopaFest 2020
+		</div>
+		<div class="intro-banner__sub-text">
+			Saturday, October 24th, 2020
+		</div>
+	</div>
+</template>
+
+<script>
+export default {
+	name: "intro_banner"
+};
+</script>
+
+<style scoped lang="scss">
+@import "../assets/global.scss";
+
+@mixin intro-banner-text-properties {
+	color: white;
+	text-shadow: -0.1rem -0.1rem 0 black, 0.1rem -0.1rem 0 black,
+		-0.1rem 0.1rem 0 black, 0.1rem 0.1rem 0 black;
+	background-color: $az-blue;
+}
+
+.intro-banner {
+	text-align: center;
+	font-family: "Lalezar", sans-serif;
+	background-color: $az-blue;
+
+	&__upper {
+		display: flex;
+		justify-content: space-around;
+		@include intro-banner-text-properties;
+		@include header-vertical-adjustment;
+	}
+
+	&__upper-left,
+	&__upper-right {
+		font-size: 2rem;
+		transform: translateY(-20%);
+
+		// mobile styles
+		@media (max-width: 600px) {
+			& {
+				font-size: 1.5rem;
+				transform: translateY(-100%);
+			}
+		}
+	}
+
+	&__main-text {
+		font-size: 4rem;
+		color: white;
+		@include intro-banner-text-properties;
+		@include header-vertical-adjustment;
+	}
+
+	&__sub-text {
+		font-size: 2.3rem;
+		color: white;
+		@include intro-banner-text-properties;
+		@include header-vertical-adjustment;
+	}
+}
+</style>
