@@ -12,7 +12,7 @@ module.exports = {
 			impliedStrict: true
 		}
 	},
-	extends: ["plugin:vue/recommended", "plugin:prettier/recommended"],
+	extends: ["plugin:vue/essential", "plugin:prettier/recommended"],
 	plugins: ["prettier", "html"],
 	// add your custom rules here
 	rules: {
