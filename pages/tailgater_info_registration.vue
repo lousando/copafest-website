@@ -7,6 +7,17 @@
 		<input type="hidden" name="cmd" value="_s-xclick" />
 		<input type="hidden" name="hosted_button_id" value="JT7CB98ACTZGS" />
 
+		<div class="is-size-3 has-text-weight-bold">
+			Welcome Tailgaters!
+		</div>
+		<div class="is-size-4 has-text-weight-bold">
+			To register, please fill out the form below:
+		</div>
+		<p>Set up begins at 5:00 AM</p>
+		<p>
+			Two parking spaces are $10
+		</p>
+
 		<div class="form-row">
 			<label for="name_and_call">
 				Name and Call:
@@ -35,8 +46,7 @@
 			<input type="hidden" name="on1" value="Contact Information" />
 		</div>
 
-		<button type="submit" class="button-submit"
->
+		<button type="submit" class="button-submit">
 			Reserve 2 Parking Spaces
 		</button>
 
@@ -54,6 +64,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "../assets/global";
 form {
 	text-align: center;
 
@@ -67,12 +78,10 @@ form {
 	}
 
 	.button-submit {
-		margin-right: 1rem;
 		max-height: 4rem;
 		cursor: pointer;
-		background-color: #ffc439;
+		background-color: $az-yellow;
 		padding: 0.5rem;
-		border-radius: 2rem;
 		font-weight: bold;
 		font-size: 1.2rem;
 	}

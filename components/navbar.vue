@@ -22,8 +22,8 @@
 		</div>
 		<div :class="{ 'navbar-menu': true, 'is-active': this.showNavbar }">
 			<div class="navbar-start">
-				<nuxt-link class="navbar-item" to="/tailgater_registration">
-					Tailgater Registration
+				<nuxt-link class="navbar-item" to="/tailgater_info_registration">
+					Tailgater Info &amp; Registration
 				</nuxt-link>
 				<nuxt-link class="navbar-item" to="/volunteer">
 					Volunteer

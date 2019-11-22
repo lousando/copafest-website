@@ -183,6 +183,7 @@
 								>
 							</p>
 							<p>Raffle tickets are $1 each.</p>
+              <br/>
 							<p class="has-text-danger">
 								**Each admission comes with 1 entry for the door
 								prize. All door prizes are to be picked up by
@@ -192,19 +193,6 @@
 							</p>
 						</div>
 
-						<div class="is-size-3 has-text-weight-bold">
-							Tailgaters:
-						</div>
-						<p>Set up begins at 5:00 AM</p>
-						<p>
-							Two parking spaces are $10.00.
-						</p>
-						<p>
-							<nuxt-link to="/tailgater_registration">
-								Please click here to reserve your space before
-								the big day.
-							</nuxt-link>
-						</p>
 						<br />
 						<p>
 							For more information, contact us at:
@@ -330,14 +318,12 @@
 }
 
 .payment-button {
-	margin-right: 1rem;
-	max-height: 4rem;
-	cursor: pointer;
-	background-color: $az-yellow;
-	padding: 0.5rem;
-	border-radius: 2rem;
-	font-weight: bold;
-	font-size: 1.2rem;
+  max-height: 4rem;
+  cursor: pointer;
+  background-color: $az-yellow;
+  padding: 0.5rem;
+  font-weight: bold;
+  font-size: 1.2rem;
 
 	&__text {
 		color: black;
