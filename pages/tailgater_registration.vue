@@ -35,7 +35,8 @@
 			<input type="hidden" name="on1" value="Contact Information" />
 		</div>
 
-		<button type="submit" class="button-submit">
+		<button type="submit" class="button-submit"
+>
 			Reserve 2 Parking Spaces
 		</button>
 
@@ -43,20 +44,12 @@
 			Need more space? Contact us directly at:
 			<a href="mailto:fest@copafest.org">fest@copafest.org</a>
 		</p>
-
-		<img
-			alt=""
-			border="0"
-			src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif"
-			width="1"
-			height="1"
-		/>
 	</form>
 </template>
 
 <script>
 export default {
-	name: "tailgater_registration"
+	name: "TailgaterRegistration"
 };
 </script>
 
