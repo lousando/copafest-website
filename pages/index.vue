@@ -1,8 +1,8 @@
 <template>
 	<div>
 		<intro-banner />
-		<div class="columns">
-			<div class="column has-text-centered">
+		<section class="section">
+			<div class="container has-text-centered">
 				<div class="box">
 					<p>
 						Please Join Us For A Day Full Of Vendor Exhibits,
@@ -13,10 +13,71 @@
 					</a>
 				</div>
 
-				<div class="box">
+				<div class="columns">
+					<div class="column">
+						<div class="is-size-3 has-text-weight-bold">
+							General Public
+						</div>
+						<div>
+							<p>
+								Hours will be from 7:00 AM to 1:00 PM.
+							</p>
+							<p>
+								Admission donation is $5.00 per person<span
+									class="has-text-danger"
+									>**</span
+								>
+							</p>
+							<p>Raffle tickets are $1 each.</p>
+							<br />
+							<p class="has-text-danger">
+								**Each admission comes with 1 entry for the door
+								prize. All door prizes are to be picked up by
+								the end of CopaFest. Any unclaimed door prizes
+								will become property of Maricopa Amateur
+								Association.
+							</p>
+						</div>
+
+						<br />
+						<p>
+							For more information, contact us at:
+							<a href="mailto:fest@copafest.org">
+								fest@copafest.org
+							</a>
+						</p>
+					</div>
+					<div class="column">
+						<div class="is-size-3 has-text-weight-bold">
+							Location
+						</div>
+						<div>
+							<figure class="image is-square">
+								<iframe
+									class="has-ratio"
+									width="100"
+									height="100"
+									frameborder="0"
+									style="border:0"
+									:src="
+										`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ4yE0slTlKocRxtZoIp7yU4o&key=${NUXT_ENV_GMAPS_API_KEY}`
+									"
+									allowfullscreen
+								></iframe>
+							</figure>
+						</div>
+						<p>
+							On top of CopaFest, there are also many activities
+							available inside the UltraStar Multitainment Center
+							including: laser tag, bowling, movies, games, dining
+							and more. Dining and Hotel also available.
+						</p>
+					</div>
+				</div>
+
+				<div class="box is-size-3">
 					<p>
-						Buy your raffle tickets now for a chance to win any of
-						these great prizes:
+						Raffle Prizes
 					</p>
 				</div>
 
@@ -117,10 +178,11 @@
 								name="currency_code"
 								value="USD"
 							/>
-							<button type="submit" class="payment-button">
-								<h3 class="payment-button__text">
-									Buy 14 raffle tickets for $10.00 USD*
-								</h3>
+							<button
+								type="submit"
+								class="square-button square-button--yellow"
+							>
+								Buy 14 raffle tickets for $10.00 USD*
 							</button>
 						</form>
 						<form
@@ -150,10 +212,11 @@
 								value="USD"
 							/>
 
-							<button type="submit" class="payment-button">
-								<h3 class="payment-button__text">
-									Buy 30 raffle tickets for $20.00 USD*
-								</h3>
+							<button
+								type="submit"
+								class="square-button square-button--yellow"
+							>
+								Buy 30 raffle tickets for $20.00 USD*
 							</button>
 						</form>
 					</div>
@@ -169,116 +232,25 @@
 					</p>
 				</div>
 
-				<div class="columns">
-					<div class="column">
-						<div class="is-size-3 has-text-weight-bold">
-							General Public:
-						</div>
-						<div>
-							<p>Hours will be from 7:00 AM to 1:00 PM.</p>
-							<p>
-								Admission donation is $5.00 per person<span
-									class="has-text-danger"
-									>**</span
-								>
-							</p>
-							<p>Raffle tickets are $1 each.</p>
-              <br/>
-							<p class="has-text-danger">
-								**Each admission comes with 1 entry for the door
-								prize. All door prizes are to be picked up by
-								the end of CopaFest. Any unclaimed door prizes
-								will become property of Maricopa Amateur
-								Association.
-							</p>
-						</div>
-
-						<br />
-						<p>
-							For more information, contact us at:
-							<a href="mailto:fest@copafest.org">
-								fest@copafest.org
-							</a>
-						</p>
+				<div class="level box">
+					<div class="level-item">
+						We are beginning to plan for #CopaFest20! If you are
+						interested in helping, please click the Volunteer button
+						and let us know!
 					</div>
-					<div class="column">
-						<div>
-							UltraStar MultiTainment Center at Ak-Chin Circle
-							16000 N Maricopa Road, Maricopa AZ
-						</div>
-						<div>
-							<figure class="image is-square">
-								<iframe
-									class="has-ratio"
-									width="200"
-									height="200"
-									frameborder="0"
-									style="border:0"
-									:src="
-										`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ4yE0slTlKocRxtZoIp7yU4o&key=${NUXT_ENV_GMAPS_API_KEY}`
-									"
-									allowfullscreen
-								></iframe>
-							</figure>
-						</div>
-						<p>
-							There are also many activities available inside the
-							UltraStar Multitainment Center including: laser tag,
-							bowling, movies, games, dining and more. Dining and
-							Hotel also available.
-						</p>
-					</div>
-				</div>
-
-				<div class="level">
-					<div class="level-left">
-						<div class="level-item">
-							We are beginning the planning process for
-							#CopaFest20! If you are interested in being on the
-							planning committee, please click the Volunteer
-							button and let us know!
-						</div>
-					</div>
-					<div class="level-right">
-						<div class="level-item">
-							<nuxt-link to="/volunteer">
+					<div class="level-item">
+						<nuxt-link to="/volunteer">
+							<button
+								type="button"
+								class="square-button square-button--yellow"
+							>
 								Volunteer
-							</nuxt-link>
-						</div>
-					</div>
-				</div>
-
-				<div class="columns">
-					<div class="column">
-						<form
-							action="https://www.paypal.com/cgi-bin/webscr"
-							method="post"
-							target="_blank"
-						>
-							<input type="hidden" name="cmd" value="_s-xclick" />
-							<input
-								type="hidden"
-								name="hosted_button_id"
-								value="AL3TRQJ78JY6E"
-							/>
-							<button type="submit" class="payment-button">
-								<div class="payment-button__text">
-									Donate
-								</div>
 							</button>
-						</form>
-					</div>
-					<div class="column">
-						<p>
-							If you have a bit of change to spare, please
-							consider donating for us to continue funding future
-							CopaFests and other club activities to keep the
-							hobby of ham radio alive.
-						</p>
+						</nuxt-link>
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	</div>
 </template>
 
@@ -315,19 +287,6 @@
 .raffle-button-container {
 	display: flex;
 	justify-content: center;
-}
-
-.payment-button {
-  max-height: 4rem;
-  cursor: pointer;
-  background-color: $az-yellow;
-  padding: 0.5rem;
-  font-weight: bold;
-  font-size: 1.2rem;
-
-	&__text {
-		color: black;
-		font-family: sans-serif;
-	}
+	margin-bottom: 1rem;
 }
 </style>
