@@ -35,7 +35,7 @@
                   **Each admission comes with 1 entry for the door
                   prize. All door prizes are to be picked up by
                   the end of CopaFest. Any unclaimed door prizes
-                  will become property of Maricopa Amateur
+                  will become property of Maricopa Amateur Radio
                   Association.
                 </p>
               </div>
