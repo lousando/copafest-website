@@ -19,6 +19,9 @@ export default {
 			}
 		],
 		link: [
+			/**
+			 * preloads
+			 */
 			{
 				rel: "preload",
 				as: "stylesheet",
@@ -29,7 +32,11 @@ export default {
 				rel: "stylesheet",
 				href:
 					"https://fonts.googleapis.com/css?family=Alfa+Slab+One|Istok+Web|Lalezar&display=swap"
-			}
+			},
+			/**
+			 * direct links
+			 */
+			{ rel: "icon", type: "image/icon", href: "/imgs/favicon.ico" }
 		]
 	},
 	/*
