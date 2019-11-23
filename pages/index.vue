@@ -229,21 +229,23 @@
 					</p>
 				</div>
 
-				<div class="level box">
-					<div class="level-item">
-						We are beginning to plan for #CopaFest20! If you are
-						interested in helping, please click the Volunteer button
-						and let us know!
-					</div>
-					<div class="level-item">
-						<nuxt-link to="/volunteer">
-							<button
-								type="button"
-								class="square-button square-button--yellow"
-							>
-								Volunteer
-							</button>
-						</nuxt-link>
+				<div class="box">
+					<div class="columns">
+						<div class="column">
+							We are beginning to plan for #CopaFest20, if you are
+							interested in helping, please click the Volunteer
+							button and let us know!
+						</div>
+						<div class="column">
+							<nuxt-link to="/volunteer">
+								<button
+									type="button"
+									class="square-button square-button--yellow"
+								>
+									Volunteer
+								</button>
+							</nuxt-link>
+						</div>
 					</div>
 				</div>
 			</div>
