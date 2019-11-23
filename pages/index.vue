@@ -81,8 +81,8 @@
 					</p>
 				</div>
 
-				<div class="level grand-prize-container">
-					<div class="level-item">
+				<div class="columns is-vcentered prizes-container">
+					<div class="column">
 						<div class="card">
 							<div class="card-header">
 								<div class="card-header-title">
@@ -103,10 +103,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
-
-				<div class="level minor-prize-container">
-					<div class="level-item">
+					<div class="column">
 						<div class="card">
 							<div class="card-header">
 								<div class="card-header-title">
@@ -127,7 +124,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="level-item">
+					<div class="column">
 						<div class="card">
 							<div class="card-header">
 								<div class="card-header-title">
@@ -135,7 +132,7 @@
 								</div>
 							</div>
 							<div class="card-image">
-								<figure class="image is-2by3">
+								<figure class="image">
 									<img
 										src="imgs/prizes/prize_3.jpg"
 										alt="Yaesu FT-70DR Dual Band Fusion"
@@ -272,15 +269,16 @@
 <style scoped="true" lang="scss">
 @import "../assets/global";
 
-.grand-prize-container {
-	img {
-		transform: scale(0.3);
+.prizes-container {
+	.image {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 400px;
 	}
-}
 
-.minor-prize-container {
 	img {
-		transform: scale(0.3);
+		max-height: 400px;
 	}
 }
 
