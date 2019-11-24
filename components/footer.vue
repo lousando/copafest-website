@@ -38,6 +38,7 @@
 					<img
 						class="mara-logo is-rounded"
 						src="imgs/mara_logo.svg"
+            alt="MARA Logo"
 					/>
 					<div>
 						CopaHams.org
