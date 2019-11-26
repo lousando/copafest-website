@@ -10,17 +10,30 @@
 			</div>
 		</div>
 		<div class="intro-banner__main-text">
-			CopaFest 2020
+			CopaFest {{this.copaFestYear}}
 		</div>
 		<div class="intro-banner__sub-text">
-			Saturday, October 24th, 2020
+			{{ this.copaFestDate }}
 		</div>
 	</div>
 </template>
 
 <script>
-export default {
-	name: "intro_banner"
+	import settings from "../assets/settings.json";
+	import { DateTime } from "luxon";
+
+	export default {
+	name: "intro_banner",
+	data() {
+		let copaFestDateTime = DateTime.fromISO(
+			settings.copa_fest_date
+		);
+
+		return {
+			copaFestDate: copaFestDateTime.toLocaleString(DateTime.DATE_HUGE),
+			copaFestYear: copaFestDateTime.year
+		};
+	}
 };
 </script>
 

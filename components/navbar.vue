@@ -6,7 +6,7 @@
 	>
 		<div class="navbar-brand">
 			<nuxt-link class="navbar-item" to="/">
-				CopaFest 2020
+				CopaFest {{this.copaFestYear}}
 			</nuxt-link>
 			<a
 				role="button"
@@ -22,7 +22,10 @@
 		</div>
 		<div :class="{ 'navbar-menu': true, 'is-active': this.showNavbar }">
 			<div class="navbar-start">
-				<nuxt-link class="navbar-item" to="/tailgater_info_registration">
+				<nuxt-link
+					class="navbar-item"
+					to="/tailgater_info_registration"
+				>
 					Tailgater Info &amp; Registration
 				</nuxt-link>
 				<nuxt-link class="navbar-item" to="/volunteer">
@@ -31,7 +34,7 @@
 			</div>
 			<div class="navbar-end is-hidden-mobile">
 				<div class="navbar-item">
-					Saturday, October 24th, 2020
+					{{ this.copaFestDate }}
 				</div>
 			</div>
 		</div>
@@ -39,10 +42,19 @@
 </template>
 
 <script>
-export default {
+  import { DateTime } from "luxon";
+  import settings from "../assets/settings";
+
+  export default {
 	name: "Navbar",
 	data() {
+    let copaFestDateTime = DateTime.fromISO(
+      settings.copa_fest_date
+    );
+
 		return {
+      copaFestDate: copaFestDateTime.toLocaleString(DateTime.DATE_HUGE),
+      copaFestYear: copaFestDateTime.year,
 			showNavbar: false
 		};
 	},

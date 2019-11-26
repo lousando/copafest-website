@@ -1,10 +1,13 @@
+import settings from "./assets/settings";
+import { DateTime } from "luxon";
+
 export default {
 	mode: "spa",
 	/*
 	 ** Headers of the page
 	 */
 	head: {
-		title: "CopaFest",
+		title: `CopaFest ${DateTime.fromISO(settings.copa_fest_date).year}`,
 		meta: [
 			{ charset: "utf-8" },
 			{

@@ -234,7 +234,7 @@
 				<div class="box">
 					<div class="columns">
 						<div class="column">
-							We are beginning to plan for #CopaFest20, if you are
+							We are beginning to plan for #CopaFest, if you are
 							interested in helping, please click the Volunteer
 							button and let us know!
 						</div>
@@ -256,9 +256,9 @@
 </template>
 
 <script>
-	import intro_banner from "../components/intro_banner";
+  import intro_banner from "../components/intro_banner";
 
-	export default {
+  export default {
 	data() {
 		return {
 			NUXT_ENV_GMAPS_API_KEY: process.env.NUXT_ENV_GMAPS_API_KEY
