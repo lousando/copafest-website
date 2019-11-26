@@ -9,7 +9,7 @@ sections:
 - type: heading
   label: Global
 - type: document
-  path: "./assets/settings.json"
+  path: assets/settings.json
   label: Settings
 upload_dir: uploads
 public_path: "/uploads"
