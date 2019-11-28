@@ -5,77 +5,81 @@
 			<div class="container has-text-centered">
 				<div class="box">
 					<p>
-						Please Join Us For A Day Full Of Vendor Exhibits,
-						Seminars, VE Testing, Card Checking, Prizes And More!​
+						Come on down and finally put a face to that voice! While
+						you're here, come and join a seminar or get your QSL
+						cards checked. Not on the air yet? Then join a VE
+						testing session, check out some radio gear, or see if
+						lady luck is on your side at the raffle.
 					</p>
 					<a href="/flyers/copafest_2020_flyer.jpg" target="_blank">
 						Please click here for the official flyer.
 					</a>
 				</div>
 
-        <div class="box">
-          <div class="columns">
-            <div class="column">
-              <div class="is-size-3 has-text-weight-bold">
-                General Public
-              </div>
-              <div>
-                <p>
-                  Hours will be from 7:00 AM to 1:00 PM.
-                </p>
-                <p>
-                  Admission donation is $5.00 per person<span
-                  class="has-text-danger"
-                >**</span
-                >
-                </p>
-                <p>Raffle tickets are $1 each.</p>
-                <br />
-                <p class="has-text-danger">
-                  **Each admission comes with 1 entry for the door
-                  prize. All door prizes are to be picked up by
-                  the end of CopaFest. Any unclaimed door prizes
-                  will become property of Maricopa Amateur Radio
-                  Association.
-                </p>
-              </div>
+				<div class="box">
+					<div class="columns">
+						<div class="column">
+							<div class="is-size-3 has-text-weight-bold">
+								General Public
+							</div>
+							<div>
+								<p>
+									Hours will be from 7:00 AM to 1:00 PM.
+								</p>
+								<p>
+									Admission donation is $5.00 per person<span
+										class="has-text-danger"
+										>**</span
+									>
+								</p>
+								<p>Raffle tickets are $1 each.</p>
+								<br />
+								<p class="has-text-danger">
+									**Each admission comes with 1 entry for the
+									door prize. All door prizes are to be picked
+									up by the end of CopaFest. Any unclaimed
+									door prizes will become property of Maricopa
+									Amateur Radio Association.
+								</p>
+							</div>
 
-              <br />
-              <p>
-                For more information, contact us at:
-                <a href="mailto:fest@copafest.org">
-                  fest@copafest.org
-                </a>
-              </p>
-            </div>
-            <div class="column">
-              <div class="is-size-3 has-text-weight-bold">
-                Location
-              </div>
-              <div>
-                <figure class="image is-square">
-                  <iframe
-                    class="has-ratio"
-                    width="100"
-                    height="100"
-                    frameborder="0"
-                    style="border:0"
-                    :src="
-										`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ4yE0slTlKocRxtZoIp7yU4o&key=${NUXT_ENV_GMAPS_API_KEY}`
-									"
-                    allowfullscreen
-                  ></iframe>
-                </figure>
-              </div>
-              <p>
-                On top of CopaFest, there are also many activities
-                available inside the UltraStar Multitainment Center
-                including: laser tag, bowling, movies, games, dining
-                and more. Dining and Hotel also available.
-              </p>
-            </div>
-          </div>
-        </div>
+							<br />
+							<p>
+								For more information, contact us at:
+								<a href="mailto:fest@copafest.org">
+									fest@copafest.org
+								</a>
+							</p>
+						</div>
+						<div class="column">
+							<div class="is-size-3 has-text-weight-bold">
+								Location
+							</div>
+							<div>
+								<figure class="image is-square">
+									<iframe
+										class="has-ratio"
+										width="100"
+										height="100"
+										frameborder="0"
+										style="border:0"
+										:src="
+											`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ4yE0slTlKocRxtZoIp7yU4o&key=${NUXT_ENV_GMAPS_API_KEY}`
+										"
+										allowfullscreen
+									></iframe>
+								</figure>
+							</div>
+							<p>
+								On top of CopaFest, there are also many
+								activities available inside the UltraStar
+								Multitainment Center including: laser tag,
+								bowling, movies, games, dining and more. Dining
+								and Hotel also available.
+							</p>
+						</div>
+					</div>
+				</div>
 
 				<div class="box is-size-3">
 					<p>
