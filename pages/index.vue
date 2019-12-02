@@ -58,12 +58,12 @@
 							<div>
 								<figure class="image is-square">
 									<iframe
-										class="has-ratio"
+										class="has-ratio lozad"
 										width="100"
 										height="100"
 										frameborder="0"
 										style="border:0"
-										:src="
+										:data-src="
 											`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ4yE0slTlKocRxtZoIp7yU4o&key=${NUXT_ENV_GMAPS_API_KEY}`
 										"
 										allowfullscreen
@@ -103,7 +103,8 @@
 							<div class="card-image">
 								<figure class="image">
 									<img
-										:src="prize.image_path"
+										class="lozad"
+										:data-src="prize.image_path"
 										:alt="prize.name"
 										:title="prize.name"
 									/>
@@ -226,8 +227,12 @@
   import intro_banner from "../components/intro_banner";
   import indexSettings from "../assets/settings/pages/index";
   import ordinal from "ordinal";
+  import lozad from "lozad";
 
   export default {
+	mounted() {
+		lozad().observe(); // lazy load our .lozad selectors
+	},
 	data() {
 		return {
 			NUXT_ENV_GMAPS_API_KEY: process.env.NUXT_ENV_GMAPS_API_KEY,
