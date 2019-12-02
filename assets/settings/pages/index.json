@@ -1,0 +1,16 @@
+{
+  "raffle_prizes": [
+    {
+      "name": "Xiegu G90 SDR 20W HF",
+      "image_path": "/imgs/prizes/prize_1.jpg"
+    },
+    {
+      "name": "Icom IC-2730 Dual Band D-Star Mobile",
+      "image_path": "/imgs/prizes/prize_2.jpg"
+    },
+    {
+      "name": "Yaesu FT-70DR Dual Band Fusion",
+      "image_path": "/imgs/prizes/prize_3.jpg"
+    }
+  ]
+}

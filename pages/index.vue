@@ -88,66 +88,29 @@
 				</div>
 
 				<div class="columns is-vcentered prizes-container">
-					<div class="column">
+					<div
+						class="column"
+						v-for="(prize,
+						prizeIndex) in indexSettings.raffle_prizes"
+						:key="prize.image_path"
+					>
 						<div class="card">
 							<div class="card-header">
 								<div class="card-header-title">
-									1st Prize
+									{{ getOrdinal(prizeIndex + 1) }} Prize
 								</div>
 							</div>
 							<div class="card-image">
 								<figure class="image">
 									<img
-										src="imgs/prizes/prize_1.jpg"
-										alt="Xiegu G90 SDR 20W HF"
-										title="Xiegu G90 SDR 20W HF"
+										:src="prize.image_path"
+										:alt="prize.name"
+										:title="prize.name"
 									/>
 								</figure>
 							</div>
 							<div class="card-content">
-								Xiegu G90 SDR 20W HF
-							</div>
-						</div>
-					</div>
-					<div class="column">
-						<div class="card">
-							<div class="card-header">
-								<div class="card-header-title">
-									2nd Prize
-								</div>
-							</div>
-							<div class="card-image">
-								<figure class="image">
-									<img
-										src="imgs/prizes/prize_2.jpg"
-										alt="Icom IC-2730 Dual Band D-Star Mobile"
-										title="Icom IC-2730 Dual Band D-Star Mobile"
-									/>
-								</figure>
-							</div>
-							<div class="card-content">
-								Icom IC-2730 Dual Band D-Star Mobile
-							</div>
-						</div>
-					</div>
-					<div class="column">
-						<div class="card">
-							<div class="card-header">
-								<div class="card-header-title">
-									3rd Prize
-								</div>
-							</div>
-							<div class="card-image">
-								<figure class="image">
-									<img
-										src="imgs/prizes/prize_3.jpg"
-										alt="Yaesu FT-70DR Dual Band Fusion"
-										title="Yaesu FT-70DR Dual Band Fusion"
-									/>
-								</figure>
-							</div>
-							<div class="card-content">
-								Yaesu FT-70DR Dual Band Fusion
+								{{ prize.name }}
 							</div>
 						</div>
 					</div>
@@ -261,15 +224,23 @@
 
 <script>
   import intro_banner from "../components/intro_banner";
+  import indexSettings from "../assets/settings/pages/index";
+  import ordinal from "ordinal";
 
   export default {
 	data() {
 		return {
-			NUXT_ENV_GMAPS_API_KEY: process.env.NUXT_ENV_GMAPS_API_KEY
+			NUXT_ENV_GMAPS_API_KEY: process.env.NUXT_ENV_GMAPS_API_KEY,
+			indexSettings
 		};
 	},
 	components: {
 		introBanner: intro_banner
+	},
+	methods: {
+		getOrdinal(number) {
+			return ordinal(number);
+		}
 	}
 };
 </script>

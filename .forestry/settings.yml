@@ -5,7 +5,10 @@ admin_path: ''
 webhook_url:
 sections:
 - type: heading
-  label: Text
+  label: Pages
+- type: document
+  path: assets/settings/pages/index.json
+  label: Index
 - type: heading
   label: Global
 - type: document
