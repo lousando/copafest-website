@@ -1,4 +1,4 @@
-import settings from "./assets/settings";
+import settings from "./assets/settings/global";
 import { DateTime } from "luxon";
 
 export default {

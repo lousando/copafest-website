@@ -43,7 +43,7 @@
 
 <script>
   import { DateTime } from "luxon";
-  import settings from "../assets/settings";
+  import settings from "../assets/settings/global";
 
   export default {
 	name: "Navbar",

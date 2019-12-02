@@ -19,10 +19,10 @@
 </template>
 
 <script>
-	import settings from "../assets/settings.json";
-	import { DateTime } from "luxon";
+  import settings from "../assets/settings/global";
+  import { DateTime } from "luxon";
 
-	export default {
+  export default {
 	name: "intro_banner",
 	data() {
 		let copaFestDateTime = DateTime.fromISO(
