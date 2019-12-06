@@ -1,0 +1,14 @@
+---
+label: Index
+hide_body: true
+fields:
+- type: field_group_list
+  name: raffle_prizes
+  label: raffle_prizes
+  fields:
+  - type: text
+    name: name
+    label: name
+  - type: file
+    name: image_path
+    label: image_path
