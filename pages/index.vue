@@ -117,7 +117,7 @@
 					</div>
 				</div>
 
-				<div class="box">
+				<div class="box" v-if="hasRaffleTicketCutoffPassed === false">
 					<div class="raffle-button-container">
 						<form
 							target="_blank"
@@ -193,8 +193,8 @@
 							*All ticket sales final.<br />
 							Minimum online purchase is $10. Smaller increments
 							will be available in-person the day of Copafest.<br />
-							Last day to purchase online tickets will be Monday,
-							October, 19th, 2020 @ 23:59 MST.<br />
+							Last day to purchase online tickets will be
+							{{ this.lastDayForOnlineRaffleTicketSale }}.<br />
 						</i>
 					</p>
 				</div>
@@ -228,15 +228,26 @@
   import indexSettings from "../assets/settings/pages/index";
   import ordinal from "ordinal";
   import lozad from "lozad";
+  import { DateTime } from "luxon";
+  import globalSettings from "../assets/settings/global";
 
   export default {
 	mounted() {
 		lozad().observe(); // lazy load our .lozad selectors
 	},
 	data() {
+		let lastDayForOnlineRaffleTicketSale = DateTime.fromISO(
+			globalSettings.last_day_for_online_raffle_ticket_sale
+		);
+
 		return {
 			NUXT_ENV_GMAPS_API_KEY: process.env.NUXT_ENV_GMAPS_API_KEY,
-			indexSettings
+			indexSettings,
+			lastDayForOnlineRaffleTicketSale: lastDayForOnlineRaffleTicketSale.toLocaleString(
+				DateTime.DATETIME_HUGE_WITH_SECONDS
+			),
+			hasRaffleTicketCutoffPassed:
+				DateTime.local() > lastDayForOnlineRaffleTicketSale
 		};
 	},
 	components: {
