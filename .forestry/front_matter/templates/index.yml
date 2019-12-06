@@ -12,3 +12,5 @@ fields:
   - type: file
     name: image_path
     label: image_path
+pages:
+- assets/settings/pages/index.json
