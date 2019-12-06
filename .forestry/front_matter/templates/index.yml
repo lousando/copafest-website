@@ -4,13 +4,14 @@ hide_body: true
 fields:
 - type: field_group_list
   name: raffle_prizes
-  label: raffle_prizes
+  label: Raffle Prizes
   fields:
   - type: text
     name: name
-    label: name
+    label: Prize Name
   - type: file
     name: image_path
-    label: image_path
+    label: Prize Image
+  description: The prizes that will be given out at the raffle this year
 pages:
 - assets/settings/pages/index.json
