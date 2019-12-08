@@ -34,11 +34,15 @@
 						non-profit corporation.
 					</p>
 				</div>
-				<a href="http://www.copahams.org/" target="_blank">
+				<a
+					href="http://www.copahams.org/"
+					rel="noopener"
+					target="_blank"
+				>
 					<img
 						class="mara-logo is-rounded"
 						src="imgs/mara_logo.svg"
-            alt="MARA Logo"
+						alt="MARA Logo"
 					/>
 					<div>
 						CopaHams.org

@@ -11,7 +11,7 @@
 						testing session, check out some radio gear, or see if
 						lady luck is on your side at the raffle.
 					</p>
-					<a href="/flyers/copafest_2020_flyer.jpg" target="_blank">
+					<a href="/flyers/copafest_2020_flyer.jpg" rel="noopener" target="_blank">
 						Please click here for the official flyer.
 					</a>
 				</div>
@@ -46,10 +46,10 @@
 							<br />
 							<p>
 								For more information, contact us at:
-								<a href="mailto:fest@copafest.org">
+								<a href="mailto:fest@copafest.org" rel="noopener">
 									fest@copafest.org
 								</a>
-							</p>
+							</p>ł
 						</div>
 						<div class="column">
 							<div class="is-size-3 has-text-weight-bold">
