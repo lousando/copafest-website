@@ -6,11 +6,14 @@
 	>
 		<div class="navbar-brand">
 			<nuxt-link class="navbar-item" to="/">
-				CopaFest {{this.copaFestYear}}
+				CopaFest {{ this.copaFestYear }}
 			</nuxt-link>
 			<a
 				role="button"
-				:class="{ 'navbar-burger': true, 'is-active': this.showNavbar }"
+				:class="{
+					'navbar-burger': true,
+					'is-active': this.$store.state.showNavbar
+				}"
 				aria-label="menu"
 				aria-expanded="false"
 				@click="onClickHamburgerMenu"
@@ -20,7 +23,12 @@
 				<span aria-hidden="true"></span>
 			</a>
 		</div>
-		<div :class="{ 'navbar-menu': true, 'is-active': this.showNavbar }">
+		<div
+			:class="{
+				'navbar-menu': true,
+				'is-active': this.$store.state.showNavbar
+			}"
+		>
 			<div class="navbar-start">
 				<nuxt-link
 					class="navbar-item"
@@ -48,19 +56,16 @@
   export default {
 	name: "Navbar",
 	data() {
-    let copaFestDateTime = DateTime.fromISO(
-      settings.copa_fest_date
-    );
+		let copaFestDateTime = DateTime.fromISO(settings.copa_fest_date);
 
 		return {
-      copaFestDate: copaFestDateTime.toLocaleString(DateTime.DATE_HUGE),
-      copaFestYear: copaFestDateTime.year,
-			showNavbar: false
+			copaFestDate: copaFestDateTime.toLocaleString(DateTime.DATE_HUGE),
+			copaFestYear: copaFestDateTime.year
 		};
 	},
 	methods: {
 		onClickHamburgerMenu() {
-			this.showNavbar = !this.showNavbar;
+			this.$store.commit("toggleNavbar");
 		}
 	}
 };
