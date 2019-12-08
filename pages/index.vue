@@ -4,14 +4,12 @@
 		<section class="section">
 			<div class="container has-text-centered">
 				<div class="box">
-					<p>
-						Come on down and finally put a face to that voice! While
-						you're here, come and join a seminar or get your QSL
-						cards checked. Not on the air yet? Then join a VE
-						testing session, check out some radio gear, or see if
-						lady luck is on your side at the raffle.
-					</p>
-					<a href="/flyers/copafest_2020_flyer.jpg" rel="noopener" target="_blank">
+					<p v-html="indexSettings.event_pitch"></p>
+					<a
+						href="/flyers/copafest_2020_flyer.jpg"
+						rel="noopener"
+						target="_blank"
+					>
 						Please click here for the official flyer.
 					</a>
 				</div>
@@ -46,10 +44,14 @@
 							<br />
 							<p>
 								For more information, contact us at:
-								<a href="mailto:fest@copafest.org" rel="noopener">
+								<a
+									href="mailto:fest@copafest.org"
+									rel="noopener"
+								>
 									fest@copafest.org
 								</a>
-							</p>ł
+							</p>
+							ł
 						</div>
 						<div class="column">
 							<div class="is-size-3 has-text-weight-bold">
