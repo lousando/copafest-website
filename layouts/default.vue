@@ -15,11 +15,12 @@
 </template>
 
 <script>
-	import navbar from "../components/navbar";
-	import footer from "../components/footer";
+  import navbar from "../components/navbar";
+  import footer from "../components/footer";
 
-	export default {
+  export default {
 	mounted() {
+		_initClickyAnalytics();
 		document.documentElement.classList.add("has-navbar-fixed-top");
 	},
 	components: {
@@ -27,6 +28,22 @@
 		"copa-footer": footer
 	}
 };
+
+function _initClickyAnalytics() {
+	/**
+	 * Most likely using an add blocker.
+	 * Don't slow down the page by making a request
+	 * that'll likely be blocked.
+	 */
+	if (navigator.doNotTrack !== "1") {
+		window.clicky_site_ids = window.clicky_site_ids || [];
+		window.clicky_site_ids.push(101225522);
+
+		let clickyScript = document.createElement("script");
+		clickyScript.src = "https://static.getclicky.com/js";
+		document.head.appendChild(clickyScript);
+	}
+}
 </script>
 
 <style lang="scss">
