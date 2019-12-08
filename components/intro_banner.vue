@@ -10,7 +10,7 @@
 			</div>
 		</div>
 		<div class="intro-banner__main-text">
-			CopaFest {{this.copaFestYear}}
+			CopaFest {{ this.copaFestYear }}
 		</div>
 		<div class="intro-banner__sub-text">
 			{{ this.copaFestDate }}
@@ -19,14 +19,13 @@
 </template>
 
 <script>
-  import settings from "../assets/settings/global";
   import { DateTime } from "luxon";
 
   export default {
 	name: "intro_banner",
 	data() {
 		let copaFestDateTime = DateTime.fromISO(
-			settings.copa_fest_date
+			this.$store.state.globalSettings.copa_fest_date
 		);
 
 		return {

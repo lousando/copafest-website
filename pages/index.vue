@@ -231,7 +231,6 @@
   import ordinal from "ordinal";
   import lozad from "lozad";
   import { DateTime } from "luxon";
-  import globalSettings from "../assets/settings/global";
 
   export default {
 	mounted() {
@@ -239,7 +238,7 @@
 	},
 	data() {
 		let lastDayForOnlineRaffleTicketSale = DateTime.fromISO(
-			globalSettings.last_day_for_online_raffle_ticket_sale
+			this.$store.state.globalSettings.last_day_for_online_raffle_ticket_sale
 		);
 
 		return {

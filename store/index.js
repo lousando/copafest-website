@@ -1,5 +1,9 @@
+import globalSettings from "../assets/settings/global";
+
 export const state = () => ({
-	showNavbar: false
+	showNavbar: false,
+	// from the config file
+	globalSettings
 });
 
 export const mutations = {

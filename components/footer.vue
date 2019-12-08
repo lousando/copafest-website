@@ -2,10 +2,7 @@
 	<footer class="footer has-text-centered">
 		<div class="columns">
 			<div class="column">
-				<p>
-					Please consider donating, it'll fund future CopaFests and
-					other club activities to keep the hobby of ham radio alive.
-				</p>
+				<p v-html="this.$store.state.globalSettings.donation_pitch" />
 				<form
 					action="https://www.paypal.com/cgi-bin/webscr"
 					method="post"

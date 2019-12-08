@@ -51,12 +51,11 @@
 
 <script>
   import { DateTime } from "luxon";
-  import settings from "../assets/settings/global";
 
   export default {
 	name: "Navbar",
 	data() {
-		let copaFestDateTime = DateTime.fromISO(settings.copa_fest_date);
+		let copaFestDateTime = DateTime.fromISO(this.$store.state.globalSettings.copa_fest_date);
 
 		return {
 			copaFestDate: copaFestDateTime.toLocaleString(DateTime.DATE_HUGE),
