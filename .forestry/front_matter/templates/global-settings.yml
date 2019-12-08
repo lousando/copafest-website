@@ -4,10 +4,18 @@ hide_body: true
 fields:
 - type: datetime
   name: copa_fest_date
-  label: copa_fest_date
+  label: CopaFest Date
+  description: When's the party?
 - type: datetime
   name: last_day_for_online_raffle_ticket_sale
-  label: last_day_for_online_raffle_ticket_sale
+  label: Online Raffle Ticket Cut-Off
+  description: Online sales are unavailable after this date and time.
 - type: textarea
   name: donation_pitch
-  label: donation_pitch
+  label: Donation Pitch
+  description: Why should someone consider donating to the club?
+  config:
+    wysiwyg: true
+    schema:
+      format: markdown
+    required: false
