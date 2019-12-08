@@ -1,0 +1,13 @@
+---
+label: Global Settings
+hide_body: true
+fields:
+- type: datetime
+  name: copa_fest_date
+  label: copa_fest_date
+- type: datetime
+  name: last_day_for_online_raffle_ticket_sale
+  label: last_day_for_online_raffle_ticket_sale
+- type: textarea
+  name: donation_pitch
+  label: donation_pitch
