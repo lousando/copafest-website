@@ -2,6 +2,16 @@
 label: Index
 hide_body: true
 fields:
+- name: event_pitch
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Event Pitch
+  description: A quick run-down on what will be at CopaFest this year.
 - type: field_group_list
   name: raffle_prizes
   label: Raffle Prizes
