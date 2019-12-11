@@ -4,14 +4,13 @@
 		<section class="section">
 			<div class="container has-text-centered">
 				<div class="box">
-					<p v-html="indexSettings.event_pitch"></p>
+					<p v-html="indexSettings.event_pitch" />
 					<a
-						href="/flyers/copafest_2020_flyer.jpg"
+						:href="indexSettings.event_flyer_path"
 						rel="noopener"
 						target="_blank"
-					>
-						Please click here for the official flyer.
-					</a>
+						v-text="indexSettings.event_flyer_text"
+					/>
 				</div>
 
 				<div class="box">
@@ -237,7 +236,8 @@
 	},
 	data() {
 		let lastDayForOnlineRaffleTicketSale = DateTime.fromISO(
-			this.$store.state.globalSettings.last_day_for_online_raffle_ticket_sale
+			this.$store.state.globalSettings
+				.last_day_for_online_raffle_ticket_sale
 		);
 
 		return {
