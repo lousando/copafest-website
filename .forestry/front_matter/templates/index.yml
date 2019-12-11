@@ -12,6 +12,17 @@ fields:
       format: markdown
   label: Event Pitch
   description: A quick run-down on what will be at CopaFest this year.
+- name: event_flyer_text
+  type: text
+  config:
+    required: false
+  label: Event Flyer Text
+  default: Please click here for the official flyer.
+- name: event_flyer_path
+  type: file
+  config:
+    maxSize: 250
+  label: Event Flyer
 - type: field_group_list
   name: raffle_prizes
   label: Raffle Prizes
