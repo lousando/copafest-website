@@ -51,7 +51,6 @@
 									fest@copafest.org
 								</a>
 							</p>
-							ł
 						</div>
 						<div class="column">
 							<div class="is-size-3 has-text-weight-bold">
