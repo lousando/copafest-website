@@ -20,24 +20,36 @@
 								General Public
 							</div>
 							<div>
-								<p>
-									Hours will be from 7:00 AM to 1:00 PM.
-								</p>
-								<p>
-									Admission donation is $5.00 per person<span
-										class="has-text-danger"
-										>**</span
-									>
-								</p>
-								<p>Raffle tickets are $1 each.</p>
-								<br />
-								<p class="has-text-danger">
-									**Each admission comes with 1 entry for the
-									door prize. All door prizes are to be picked
-									up by the end of CopaFest. Any unclaimed
-									door prizes will become property of Maricopa
-									Amateur Radio Association.
-								</p>
+								<div class="notification">
+									<p>
+										<span class="has-text-weight-semibold"
+											>Hours:</span
+										>
+										7:00 AM to 1:00 PM
+									</p>
+									<p>
+										<span class="has-text-weight-semibold"
+											>Admission donation:</span
+										>
+										$5.00/person
+									</p>
+									<p>
+										<span class="has-text-weight-semibold"
+											>Raffle tickets:</span
+										>
+										$1 each at the door
+									</p>
+								</div>
+								<div class="notification is-info">
+									Each admission comes with 1 entry for the
+									door prize.
+								</div>
+								<div class="notification is-danger">
+									All door prizes are to be picked up by the
+									end of CopaFest. Any unclaimed door prizes
+									will become property of Maricopa Amateur
+									Radio Association.
+								</div>
 							</div>
 
 							<br />
@@ -188,15 +200,14 @@
 						</form>
 					</div>
 
-					<p>
-						<i>
-							*All ticket sales final.<br />
-							Minimum online purchase is $10. Smaller increments
-							will be available in-person the day of Copafest.<br />
-							Last day to purchase online tickets will be
-							{{ this.lastDayForOnlineRaffleTicketSale }}.<br />
-						</i>
-					</p>
+					<div class="notification is-info">
+						Last day to purchase online tickets will be:
+						{{ this.lastDayForOnlineRaffleTicketSale }}.
+					</div>
+
+					<div class="notification is-danger">
+						*All ticket sales final.
+					</div>
 				</div>
 
 				<div class="box">
