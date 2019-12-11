@@ -4,10 +4,14 @@ hide_body: true
 fields:
 - type: text
   name: header
-  label: header
+  label: Header
 - type: textarea
   name: content
-  label: content
+  label: Content
+  config:
+    wysiwyg: true
+    schema:
+      format: html-blocks
 - type: text
   name: button_text
-  label: button_text
+  label: Main Button Text
