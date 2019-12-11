@@ -1,0 +1,13 @@
+---
+label: volunteer
+hide_body: true
+fields:
+- type: text
+  name: header
+  label: header
+- type: textarea
+  name: content
+  label: content
+- type: text
+  name: button_text
+  label: button_text
