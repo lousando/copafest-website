@@ -47,12 +47,37 @@
 				</a>
 			</div>
 		</div>
+		<div class="columns has-text-center">
+			<div class="column">
+				<div>
+					Site contributions welcome on Github
+				</div>
+				<a
+					href="https://github.com/lousando/copafest-website"
+					target="_blank"
+					class="github-icon"
+				>
+					<font-awesome-icon :icon="faGithub" />
+				</a>
+			</div>
+		</div>
 	</footer>
 </template>
 
 <script>
-export default {
-	name: "footer"
+  import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+  import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
+  export default {
+	name: "footer",
+	data() {
+		return {
+			faGithub
+		};
+	},
+	components: {
+		"font-awesome-icon": FontAwesomeIcon
+	}
 };
 </script>
 
@@ -60,5 +85,11 @@ export default {
 .mara-logo {
 	width: 14rem;
 	height: 14rem;
+}
+
+a.github-icon,
+a:visited.github-icon {
+	color: black;
+	font-size: 2.2rem;
 }
 </style>
