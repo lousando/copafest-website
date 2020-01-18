@@ -36,12 +36,19 @@ function _initClickyAnalytics() {
 	 * that'll likely be blocked.
 	 */
 	if (navigator.doNotTrack !== "1") {
-		window.clicky_site_ids = window.clicky_site_ids || [];
-		window.clicky_site_ids.push(101225522);
+		let trackingScript = document.createElement("script");
+		trackingScript.src =
+			"https://www.googletagmanager.com/gtag/js?id=UA-156478886-1";
+		document.head.appendChild(trackingScript);
 
-		let clickyScript = document.createElement("script");
-		clickyScript.src = "https://static.getclicky.com/js";
-		document.head.appendChild(clickyScript);
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+
+		gtag("js", new Date());
+		gtag("config", "UA-156478886-1");
 	}
 }
 </script>
