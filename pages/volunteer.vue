@@ -6,9 +6,7 @@
 					<h2 v-text="volunteerSettings.header" />
 					<div v-html="volunteerSettings.content" />
 					<div>
-						<a
-							href="mailto:fest@copafest.org?subject=I'd%20like%20to%20volunteer%20for%20CopaFest&body=Hey!%0A%0AI'd%20like%20to%20help%20with..."
-						>
+						<a :href="mailtoHref">
 							<button
 								class="square-button square-button--yellow"
 								v-text="volunteerSettings.button_text"
@@ -28,7 +26,14 @@
 	name: "volunteer",
 	data() {
 		return {
-			volunteerSettings
+			volunteerSettings,
+			mailtoHref: `mailto:${
+				this.$store.state.globalSettings.copa_fest_email
+			}?subject=${encodeURIComponent(
+				`CopaFest ${this.$store.state.copaFestYear}: ${volunteerSettings.volunteer_email_subject}`
+			)}&body=${encodeURIComponent(
+				volunteerSettings.volunteer_email_body
+			)}`
 		};
 	}
 };

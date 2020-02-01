@@ -55,11 +55,11 @@
 							<br />
 							<p>
 								For more information, contact us at:
-								<a
-									href="mailto:fest@copafest.org"
-									rel="noopener"
-								>
-									fest@copafest.org
+								<a :href="mailtoHref" rel="noopener">
+									{{
+										this.$store.state.globalSettings
+											.copa_fest_email
+									}}
 								</a>
 							</p>
 						</div>
@@ -258,7 +258,8 @@
 				DateTime.DATETIME_HUGE_WITH_SECONDS
 			),
 			hasRaffleTicketCutoffPassed:
-				DateTime.local() > lastDayForOnlineRaffleTicketSale
+				DateTime.local() > lastDayForOnlineRaffleTicketSale,
+			mailtoHref: `mailto:${this.$store.state.globalSettings.copa_fest_email}`
 		};
 	},
 	components: {

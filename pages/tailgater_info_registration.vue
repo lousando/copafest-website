@@ -84,7 +84,9 @@
 
 				<p style="margin-top: 0.5rem">
 					Need more space? Contact us directly at:
-					<a href="mailto:fest@copafest.org">fest@copafest.org</a>
+					<a :href="mailtoHref">{{
+						this.$store.state.globalSettings.copa_fest_email
+					}}</a>
 				</p>
 			</form>
 		</div>
@@ -92,8 +94,19 @@
 </template>
 
 <script>
-export default {
-	name: "TailgaterRegistration"
+  import { tailgater_email_subject } from "../assets/settings/pages/tailgater_info_registration";
+
+  export default {
+	name: "TailgaterRegistration",
+	data() {
+		return {
+			mailtoHref: `mailto:${
+				this.$store.state.globalSettings.copa_fest_email
+			}?subject=${encodeURIComponent(
+				`CopaFest ${this.$store.state.copaFestYear}: ${tailgater_email_subject}`
+			)}`
+		};
+	}
 };
 </script>
 
