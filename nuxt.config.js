@@ -7,22 +7,22 @@ export default {
 	 ** Headers of the page
 	 */
 	head: {
-    htmlAttrs: {
-      lang: "en"
-    },
+		htmlAttrs: {
+			lang: "en",
+		},
 		title: `CopaFest ${DateTime.fromISO(settings.copa_fest_date).year}`,
 		meta: [
 			{ charset: "utf-8" },
 			{
 				name: "viewport",
-				content: "width=device-width, initial-scale=1"
+				content: "width=device-width, initial-scale=1",
 			},
 			{ name: "theme-color", content: "#023373" },
 			{
 				hid: "description",
 				name: "description",
-				content: process.env.npm_package_description || ""
-			}
+				content: process.env.npm_package_description || "",
+			},
 		],
 		link: [
 			/**
@@ -30,12 +30,8 @@ export default {
 			 */
 			{
 				rel: "preload",
-				as: "stylesheet",
-				href:
-					"https://fonts.googleapis.com/css?family=Alfa+Slab+One|Istok+Web|Lalezar&display=swap"
-			},
-			{
-				rel: "stylesheet",
+				as: "style",
+				onload: `this.onload=null; this.rel="stylesheet"`,
 				href:
 					"https://fonts.googleapis.com/css?family=Alfa+Slab+One|Istok+Web|Lalezar&display=swap"
 			},
@@ -59,7 +55,7 @@ export default {
 	plugins: [],
 
 	router: {
-		middleware: "navbarHide"
+		middleware: "navbarHide",
 	},
 
 	/*
@@ -73,7 +69,7 @@ export default {
 	 */
 	modules: [
 		// Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
-		"@nuxtjs/bulma"
+		"@nuxtjs/bulma",
 	],
 	/*
 	 ** Build configuration
@@ -82,13 +78,13 @@ export default {
 		postcss: {
 			preset: {
 				features: {
-					customProperties: false
-				}
-			}
+					customProperties: false,
+				},
+			},
 		},
 		/*
 		 ** You can extend webpack config here
 		 */
-		extend(config, ctx) {}
-	}
+		extend(config, ctx) {},
+	},
 };
