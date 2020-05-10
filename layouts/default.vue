@@ -20,7 +20,7 @@
 
   export default {
 	mounted() {
-		_initClickyAnalytics();
+		_initGoogleAnalytics();
 		document.documentElement.classList.add("has-navbar-fixed-top");
 	},
 	components: {
@@ -29,7 +29,7 @@
 	}
 };
 
-function _initClickyAnalytics() {
+function _initGoogleAnalytics() {
 	/**
 	 * Most likely using an add blocker.
 	 * Don't slow down the page by making a request
