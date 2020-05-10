@@ -36,10 +36,12 @@ function _initGoogleAnalytics() {
 	 * that'll likely be blocked.
 	 */
 	if (navigator.doNotTrack !== "1") {
-		let trackingScript = document.createElement("script");
-		trackingScript.src =
-			"https://www.googletagmanager.com/gtag/js?id=UA-156478886-1";
-		document.head.appendChild(trackingScript);
+    const gaId = "UA-156478886-1";
+
+    let trackingScript = document.createElement("script");
+    trackingScript.defer = true;
+    trackingScript.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+    document.head.appendChild(trackingScript);
 
 		window.dataLayer = window.dataLayer || [];
 
@@ -48,7 +50,7 @@ function _initGoogleAnalytics() {
 		}
 
 		gtag("js", new Date());
-		gtag("config", "UA-156478886-1");
+    gtag("config", gaId);
 	}
 }
 </script>
