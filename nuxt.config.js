@@ -2,7 +2,7 @@ import settings from "./assets/settings/global";
 import { DateTime } from "luxon";
 
 export default {
-	mode: "spa",
+	mode: "universal",
 	/*
 	 ** Headers of the page
 	 */
