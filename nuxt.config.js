@@ -33,13 +33,28 @@ export default {
 				as: "style",
 				onload: `this.onload=null; this.rel="stylesheet"`,
 				href:
-					"https://fonts.googleapis.com/css?family=Alfa+Slab+One|Istok+Web|Lalezar&display=swap"
+					"https://fonts.googleapis.com/css?family=Alfa+Slab+One|Istok+Web|Lalezar&display=swap",
+			},
+			{
+				rel: "preload",
+				as: "image",
+				href: "/imgs/arizona_star.svg",
+			},
+			{
+				rel: "preload",
+				as: "image",
+				href: "/imgs/mara_logo.svg",
+			},
+			{
+				rel: "preload",
+				as: "image",
+				href: "/imgs/arizona_rays.svg",
 			},
 			/**
 			 * direct links
 			 */
-			{ rel: "icon", type: "image/icon", href: "/imgs/favicon.ico" }
-		]
+			{ rel: "icon", type: "image/icon", href: "/imgs/favicon.ico" },
+		],
 	},
 	/*
 	 ** Customize the progress-bar color
