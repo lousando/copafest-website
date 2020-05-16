@@ -69,7 +69,7 @@
   import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
   export default {
-	name: "footer",
+	name: "copa-footer",
 	data() {
 		return {
 			faGithub
