@@ -19,3 +19,11 @@ fields:
     schema:
       format: markdown
     required: false
+- name: notifications
+  type: list
+  config:
+    use_select: false
+    min: 
+    max: 
+  label: Notifications
+  description: Text to display beneath the navbar on every page.
