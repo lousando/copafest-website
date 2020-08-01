@@ -2,5 +2,8 @@
   "copa_fest_date": "2021-10-30T00:00:00-07:00",
   "last_day_for_online_raffle_ticket_sale": "2021-10-23T23:59:00-07:00",
   "copa_fest_email": "fest@copafest.org",
-  "donation_pitch": "Please consider donating, it'll fund future CopaFests and other club activities to keep the hobby of ham radio alive."
+  "donation_pitch": "Please consider donating, it'll fund future CopaFests and other club activities to keep the hobby of ham radio alive.",
+  "notifications": [
+    "<b>We regret to inform you that CopaFest 2020 has been cancelled.</b><br/>If you have bought raffle tickets for 2020 you have the option to request a refund. Alternatively, you may hold onto them and use them during CopaFest 2021."
+  ]
 }

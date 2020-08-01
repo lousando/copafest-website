@@ -1,6 +1,13 @@
 <template>
 	<div>
 		<navbar />
+		<div
+			v-for="notification in this.$store.state.globalSettings.notifications"
+			:key="notification"
+			class="notification is-danger is-light has-text-centered"
+      v-html="notification"
+		>
+		</div>
 		<header class="header">
 			<div class="header__rays" />
 			<img
@@ -15,18 +22,21 @@
 </template>
 
 <script>
-  import navbar from "../components/navbar";
-  import footer from "../components/footer";
+import navbar from "../components/navbar";
+import footer from "../components/footer";
 
-  export default {
+export default {
+	data() {
+		return {};
+	},
 	mounted() {
 		_initGoogleAnalytics();
 		document.documentElement.classList.add("has-navbar-fixed-top");
 	},
 	components: {
 		navbar,
-		"copa-footer": footer
-	}
+		"copa-footer": footer,
+	},
 };
 
 function _initGoogleAnalytics() {
@@ -36,12 +46,12 @@ function _initGoogleAnalytics() {
 	 * that'll likely be blocked.
 	 */
 	if (navigator.doNotTrack !== "1") {
-    const gaId = "UA-156478886-1";
+		const gaId = "UA-156478886-1";
 
-    let trackingScript = document.createElement("script");
-    trackingScript.defer = true;
-    trackingScript.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
-    document.head.appendChild(trackingScript);
+		let trackingScript = document.createElement("script");
+		trackingScript.defer = true;
+		trackingScript.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+		document.head.appendChild(trackingScript);
 
 		window.dataLayer = window.dataLayer || [];
 
@@ -50,7 +60,7 @@ function _initGoogleAnalytics() {
 		}
 
 		gtag("js", new Date());
-    gtag("config", gaId);
+		gtag("config", gaId);
 	}
 }
 </script>
@@ -67,6 +77,14 @@ body {
 
 <style scoped lang="scss">
 @import "../assets/global.scss";
+
+.notification {
+  position: sticky;
+  top: 2.5rem;
+  margin-bottom: 0;
+  z-index: 20;
+  font-family: Verdana, sans-serif;
+}
 
 .header {
 	text-align: center;
