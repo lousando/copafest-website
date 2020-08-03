@@ -8,7 +8,7 @@ export default {
 	 */
 	head: {
 		htmlAttrs: {
-			lang: "en",
+			lang: "en-us",
 		},
 		title: `CopaFest ${DateTime.fromISO(settings.copa_fest_date).year}`,
 		meta: [
