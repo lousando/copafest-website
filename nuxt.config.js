@@ -85,7 +85,14 @@ export default {
 	modules: [
 		// Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
 		"@nuxtjs/bulma",
+		// needs to remain last
+		"@nuxtjs/sitemap",
 	],
+
+	sitemap: {
+		hostname: "https://www.copafest.org",
+	},
+
 	/*
 	 ** Build configuration
 	 */
