@@ -1,3 +1,4 @@
+const metadata = require("./assets/metadata.js");
 import settings from "./assets/settings/global";
 import { DateTime } from "luxon";
 
@@ -28,6 +29,12 @@ export default {
 				content: "ygTnkMr3NG238Kqlw1M-56vWImTIy0NusuhHGyf6UrY",
 			},
 		],
+    script: [
+      {
+        type: "application/ld+json",
+        json: metadata
+      }
+    ],
 		link: [
 			/**
 			 * preloads
