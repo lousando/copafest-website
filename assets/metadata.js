@@ -27,7 +27,7 @@ module.exports = {
 
 	location: {
 		"@type": "Place",
-		name: "UltraStar Multi-tainment Center at Ak-Chin Circle",
+		name: "Ak-Chin Circle Entertainment Center",
 		address: {
 			"@type": "PostalAddress",
 			streetAddress: "16000 N Maricopa Rd",

@@ -84,8 +84,7 @@
 							</div>
 							<p>
 								On top of CopaFest, there are also many
-								activities available inside the UltraStar
-								Multitainment Center including: laser tag,
+								activities available inside the Ak-Chin Circle Entertainment Center: laser tag,
 								bowling, movies, games, dining and more. Dining
 								and Hotel also available.
 							</p>
