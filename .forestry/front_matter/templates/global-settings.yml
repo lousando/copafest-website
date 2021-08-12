@@ -6,6 +6,19 @@ fields:
   name: copa_fest_date
   label: CopaFest Date
   description: When's the party?
+- name: copa_fest_venue_name
+  type: text
+  config:
+    required: true
+  description: The name of the area where CopaFest will take place
+  label: Venue Name
+- name: copa_fest_venue_full_address
+  type: text
+  config:
+    required: true
+  label: Venue Address
+  description: The full address (street, city, state, and zip) of where CopaFest will
+    be held.
 - type: datetime
   name: last_day_for_online_raffle_ticket_sale
   label: Online Raffle Ticket Cut-Off
