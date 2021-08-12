@@ -5,6 +5,16 @@ fields:
 - name: notifications
   type: field_group_list
   fields:
+  - name: text
+    type: textarea
+    default: ''
+    config:
+      required: true
+      wysiwyg: true
+      schema:
+        format: html
+    description: The text of the notification.
+    label: Text
   - name: type
     type: select
     default: Danger
@@ -22,16 +32,6 @@ fields:
     label: Type
     description: The type of notification. Defaults to Danger.<br><br>Danger = Red<br>Warning
       = Yellow<br>Success = Green
-  - name: text
-    type: textarea
-    default: ''
-    config:
-      required: true
-      wysiwyg: true
-      schema:
-        format: html
-    description: The text of the notification.
-    label: Text
   config:
     min: 
     max: 
