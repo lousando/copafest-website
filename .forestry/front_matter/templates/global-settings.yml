@@ -27,3 +27,5 @@ fields:
     max: 
   label: Notifications
   description: Text to display beneath the navbar on every page.
+pages:
+- assets/settings/global.json
