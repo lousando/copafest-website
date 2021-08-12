@@ -8,7 +8,7 @@
   "notifications": [
     {
       "text": "<b>We are pleased to announce that CopaFest 2021 is a GO!!!</b><br/>Those that pre-purchased raffle tickets for CopaFest 2020 your tickets are still valid for CopaFest 2021. <br/>Online purchase for CopaFest 2021 raffle tickets are available now!",
-      "type": "Danger"
+      "type": "Success"
     }
   ]
 }
