@@ -33,15 +33,14 @@ fields:
       format: markdown
     required: false
 - name: notifications
-  type: field_group
-  config: {}
+  type: field_group_list
   fields:
   - name: text
     type: text
     config:
       required: true
     label: Text
-    description: The notification text
+    description: The text of the notification.
   - name: type
     type: select
     default: Danger
@@ -58,6 +57,10 @@ fields:
         path: 
     label: Type
     description: The type of notification.
+  config:
+    min: 
+    max: 
+    labelField: 
   description: Text to display beneath the navbar on every page.
   label: Notifications
 pages:
