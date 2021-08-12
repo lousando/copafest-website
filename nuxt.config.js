@@ -3,7 +3,8 @@ import settings from "./assets/settings/global";
 import { DateTime } from "luxon";
 
 export default {
-	mode: "universal",
+	target: "static",
+
 	/*
 	 ** Headers of the page
 	 */

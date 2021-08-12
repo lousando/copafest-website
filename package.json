@@ -8,16 +8,7 @@
     "watch": "nuxt",
     "build": "nuxt generate",
     "start": "nuxt start",
-    "test": "jest",
     "forestry-preview": "nuxt --hostname 0.0.0.0 --port 8080"
-  },
-  "lint-staged": {
-    "*.{js,vue}": "eslint"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "dependencies": {
     "@nuxtjs/bulma": "^1.3.0",
@@ -28,24 +19,20 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.2",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/vue-fontawesome": "^2.0.2",
-    "@nuxtjs/eslint-config": "^5.0.0",
+    "@nuxtjs/eslint-config": "^6.0.1",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/sitemap": "^2.4.0",
     "@vue/test-utils": "^1.1.2",
     "babel-eslint": "^10.0.1",
-    "babel-jest": "^26.6.3",
     "eslint": "^7.18.0",
-    "eslint-config-prettier": "^7.2.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-html": "^6.1.1",
     "eslint-plugin-nuxt": ">=2.0.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.5.0",
-    "husky": "^4.3.8",
-    "jest": "^26.6.3",
-    "lint-staged": "^10.5.3",
     "lozad": "^1.15.0",
-    "luxon": "^1.24.1",
-    "node-sass": "^5.0.0",
+    "luxon": "^2.0.2",
+    "node-sass": "^6.0.1",
     "ordinal": "^1.0.3",
     "prettier": "^2.2.1",
     "sass-loader": "^10.1.1",
