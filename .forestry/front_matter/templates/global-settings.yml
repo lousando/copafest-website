@@ -2,36 +2,6 @@
 label: Global Settings
 hide_body: true
 fields:
-- type: datetime
-  name: copa_fest_date
-  label: CopaFest Date
-  description: When's the party?
-- name: copa_fest_venue_name
-  type: text
-  config:
-    required: true
-  description: The name of the area where CopaFest will take place
-  label: Venue Name
-- name: copa_fest_venue_full_address
-  type: text
-  config:
-    required: true
-  label: Venue Address
-  description: The full address (street, city, state, and zip) of where CopaFest will
-    be held.
-- type: datetime
-  name: last_day_for_online_raffle_ticket_sale
-  label: Online Raffle Ticket Cut-Off
-  description: Online sales are unavailable after this date and time.
-- type: textarea
-  name: donation_pitch
-  label: Donation Pitch
-  description: Why should someone consider donating to the club?
-  config:
-    wysiwyg: true
-    schema:
-      format: markdown
-    required: false
 - name: notifications
   type: field_group_list
   fields:
@@ -68,5 +38,35 @@ fields:
     labelField: 
   description: Text to display beneath the navbar on every page.
   label: Notifications
+- type: datetime
+  name: copa_fest_date
+  label: CopaFest Date
+  description: When's the party?
+- name: copa_fest_venue_name
+  type: text
+  config:
+    required: true
+  description: The name of the area where CopaFest will take place
+  label: Venue Name
+- name: copa_fest_venue_full_address
+  type: text
+  config:
+    required: true
+  label: Venue Address
+  description: The full address (street, city, state, and zip) of where CopaFest will
+    be held.
+- type: datetime
+  name: last_day_for_online_raffle_ticket_sale
+  label: Online Raffle Ticket Cut-Off
+  description: Online sales are unavailable after this date and time.
+- type: textarea
+  name: donation_pitch
+  label: Donation Pitch
+  description: Why should someone consider donating to the club?
+  config:
+    wysiwyg: true
+    schema:
+      format: markdown
+    required: false
 pages:
 - assets/settings/global.json
