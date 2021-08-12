@@ -67,6 +67,12 @@
 							<div class="is-size-3 has-text-weight-bold">
 								Location
 							</div>
+              <div class="is-size-5">
+                {{ copafestVenueName }}
+              </div>
+              <div class="is-size-6">
+                {{ copafestVenueFullAddress }}
+              </div>
 							<div>
 								<figure class="image is-square">
 									<iframe
@@ -76,18 +82,12 @@
 										frameborder="0"
 										style="border:0"
 										:data-src="
-											`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ4yE0slTlKocRxtZoIp7yU4o&key=${NUXT_ENV_GMAPS_API_KEY}`
+											`https://www.google.com/maps/embed/v1/place?key=${NUXT_ENV_GMAPS_API_KEY}&q=${encodeURIComponent(copafestVenueFullAddress)}`
 										"
 										allowfullscreen
 									></iframe>
 								</figure>
 							</div>
-							<p>
-								On top of CopaFest, there are also many
-								activities available inside the Ak-Chin Circle Entertainment Center: laser tag,
-								bowling, movies, games, dining and more. Dining
-								and Hotel also available.
-							</p>
 						</div>
 					</div>
 				</div>
@@ -236,6 +236,7 @@
 <script>
   import intro_banner from "../components/intro_banner";
   import indexSettings from "../assets/settings/pages/index";
+  import globalSettings from "../assets/settings/global.json";
   import ordinal from "ordinal";
   import lozad from "lozad";
   import { DateTime } from "luxon";
@@ -258,8 +259,10 @@
 			),
 			hasRaffleTicketCutoffPassed:
 				DateTime.local() > lastDayForOnlineRaffleTicketSale,
-			mailtoHref: `mailto:${this.$store.state.globalSettings.copa_fest_email}`
-		};
+      mailtoHref: `mailto:${this.$store.state.globalSettings.copa_fest_email}`,
+      copafestVenueName: globalSettings.copa_fest_venue_name,
+      copafestVenueFullAddress: globalSettings.copa_fest_venue_full_address
+    };
 	},
 	components: {
 		introBanner: intro_banner
