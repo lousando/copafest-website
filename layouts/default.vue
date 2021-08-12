@@ -3,9 +3,14 @@
 		<navbar />
 		<div
 			v-for="notification in this.$store.state.globalSettings.notifications"
-			:key="notification"
-			class="notification is-danger is-light has-text-centered"
-      v-html="notification"
+			:key="notification.text"
+			:class="{
+			  notification: true,
+			  'is-light': true,
+			  'has-text-centered': true,
+        [`is-${notification.type.toLowerCase()}`]: true
+			}"
+      v-html="notification.text"
 		>
 		</div>
 		<header class="header">
