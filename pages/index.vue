@@ -13,6 +13,33 @@
 					/>
 				</div>
 
+				<!-- sponsors list -->
+				<div class="box has-text-centered">
+					<h3 class="is-size-3">{{ copaFestYear }} Sponsors</h3>
+					<div class="is-flex is-justify-content-center">
+						<div class="card card--sponsor">
+							<div class="card-image">
+								<figure class="image">
+									<img
+										data-src="/imgs/sponsors/hro.jpg"
+										alt="Ham Radio Outlet"
+										title="Ham Radio Outlet"
+										class="lozad"
+									/>
+								</figure>
+							</div>
+							<div class="card-content" data-v-2a183b29="">
+								<a
+									href="https://www.hamradio.com/"
+									target="_blank"
+									rel="noopener"
+									>Ham Radio Outlet</a
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+
 				<div class="box">
 					<div class="columns">
 						<div class="column">
@@ -67,12 +94,12 @@
 							<div class="is-size-3 has-text-weight-bold">
 								Location
 							</div>
-              <div class="is-size-5">
-                {{ copafestVenueName }}
-              </div>
-              <div class="is-size-6">
-                {{ copafestVenueFullAddress }}
-              </div>
+							<div class="is-size-5">
+								{{ copafestVenueName }}
+							</div>
+							<div class="is-size-6">
+								{{ copafestVenueFullAddress }}
+							</div>
 							<div>
 								<figure class="image is-square">
 									<iframe
@@ -80,10 +107,10 @@
 										width="100"
 										height="100"
 										frameborder="0"
-										style="border:0"
-										:data-src="
-											`https://www.google.com/maps/embed/v1/place?key=${NUXT_ENV_GMAPS_API_KEY}&q=${encodeURIComponent(copafestVenueFullAddress)}`
-										"
+										style="border: 0"
+										:data-src="`https://www.google.com/maps/embed/v1/place?key=${NUXT_ENV_GMAPS_API_KEY}&q=${encodeURIComponent(
+											copafestVenueFullAddress
+										)}`"
 										allowfullscreen
 									></iframe>
 								</figure>
@@ -93,16 +120,15 @@
 				</div>
 
 				<div class="box is-size-3">
-					<p>
-						Raffle Prizes
-					</p>
+					<p>Raffle Prizes</p>
 				</div>
 
 				<div class="columns is-vcentered prizes-container">
 					<div
 						class="column"
-						v-for="(prize,
-						prizeIndex) in indexSettings.raffle_prizes"
+						v-for="(
+							prize, prizeIndex
+						) in indexSettings.raffle_prizes"
 						:key="prize.image_path"
 					>
 						<div class="card">
@@ -234,14 +260,14 @@
 </template>
 
 <script>
-  import intro_banner from "../components/intro_banner";
-  import indexSettings from "../assets/settings/pages/index";
-  import globalSettings from "../assets/settings/global.json";
-  import ordinal from "ordinal";
-  import lozad from "lozad";
-  import { DateTime } from "luxon";
+import intro_banner from "../components/intro_banner";
+import indexSettings from "../assets/settings/pages/index";
+import globalSettings from "../assets/settings/global.json";
+import ordinal from "ordinal";
+import lozad from "lozad";
+import { DateTime } from "luxon";
 
-  export default {
+export default {
 	mounted() {
 		lozad().observe(); // lazy load our .lozad selectors
 	},
@@ -251,32 +277,43 @@
 				.last_day_for_online_raffle_ticket_sale
 		);
 
+		let copaFestDateTime = DateTime.fromISO(
+			this.$store.state.globalSettings.copa_fest_date
+		);
+
 		return {
 			NUXT_ENV_GMAPS_API_KEY: process.env.NUXT_ENV_GMAPS_API_KEY,
 			indexSettings,
-			lastDayForOnlineRaffleTicketSale: lastDayForOnlineRaffleTicketSale.toLocaleString(
-				DateTime.DATETIME_HUGE_WITH_SECONDS
-			),
+			copaFestYear: copaFestDateTime.year,
+			lastDayForOnlineRaffleTicketSale:
+				lastDayForOnlineRaffleTicketSale.toLocaleString(
+					DateTime.DATETIME_HUGE_WITH_SECONDS
+				),
 			hasRaffleTicketCutoffPassed:
 				DateTime.local() > lastDayForOnlineRaffleTicketSale,
-      mailtoHref: `mailto:${this.$store.state.globalSettings.copa_fest_email}`,
-      copafestVenueName: globalSettings.copa_fest_venue_name,
-      copafestVenueFullAddress: globalSettings.copa_fest_venue_full_address
-    };
+			mailtoHref: `mailto:${this.$store.state.globalSettings.copa_fest_email}`,
+			copafestVenueName: globalSettings.copa_fest_venue_name,
+			copafestVenueFullAddress:
+				globalSettings.copa_fest_venue_full_address,
+		};
 	},
 	components: {
-		introBanner: intro_banner
+		introBanner: intro_banner,
 	},
 	methods: {
 		getOrdinal(number) {
 			return ordinal(number);
-		}
-	}
+		},
+	},
 };
 </script>
 
 <style scoped="true" lang="scss">
 @import "../assets/global";
+
+.card--sponsor {
+	max-width: 300px;
+}
 
 .prizes-container {
 	.image {
