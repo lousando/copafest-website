@@ -16,7 +16,7 @@
 				<!-- sponsors list -->
 				<div class="box has-text-centered">
 					<h3 class="is-size-3">{{ copaFestYear }} Sponsors</h3>
-					<div class="is-flex is-justify-content-space-around">
+					<div class="sponsors-container">
 						<div class="card card--sponsor">
 							<div class="card-image">
 								<figure class="image">
@@ -37,7 +37,6 @@
 								>
 							</div>
 						</div>
-
 						<div class="card card--sponsor">
 							<div class="card-image">
 								<figure class="image">
@@ -332,8 +331,15 @@ export default {
 <style scoped="true" lang="scss">
 @import "../assets/global";
 
-.card--sponsor {
-	max-width: 300px;
+.sponsors-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+
+  .card--sponsor {
+    max-width: 300px;
+  }
 }
 
 .prizes-container {
