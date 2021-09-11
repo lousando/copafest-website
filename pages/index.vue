@@ -16,7 +16,7 @@
 				<!-- sponsors list -->
 				<div class="box has-text-centered">
 					<h3 class="is-size-3">{{ copaFestYear }} Sponsors</h3>
-					<div class="is-flex is-justify-content-center">
+					<div class="is-flex is-justify-content-space-around">
 						<div class="card card--sponsor">
 							<div class="card-image">
 								<figure class="image">
@@ -28,12 +28,33 @@
 									/>
 								</figure>
 							</div>
-							<div class="card-content" data-v-2a183b29="">
+							<div class="card-content">
 								<a
 									href="https://www.hamradio.com/"
 									target="_blank"
 									rel="noopener"
 									>Ham Radio Outlet</a
+								>
+							</div>
+						</div>
+
+						<div class="card card--sponsor">
+							<div class="card-image">
+								<figure class="image">
+									<img
+										data-src="/imgs/sponsors/icom.jpg"
+										alt="ICOM"
+										title="ICOM"
+										class="lozad"
+									/>
+								</figure>
+							</div>
+							<div class="card-content">
+								<a
+									href="https://www.icomamerica.com/en/"
+									target="_blank"
+									rel="noopener"
+									>ICOM</a
 								>
 							</div>
 						</div>
