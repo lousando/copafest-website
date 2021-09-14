@@ -21,7 +21,7 @@ fields:
 - name: event_flyer_path
   type: file
   config:
-    maxSize: 250
+    maxSize: 64
   label: Event Flyer
 - type: field_group_list
   name: raffle_prizes
