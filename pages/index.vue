@@ -17,43 +17,23 @@
 				<div class="box has-text-centered">
 					<h3 class="is-size-3">{{ copaFestYear }} Sponsors</h3>
 					<div class="sponsors-container">
-						<div class="card card--sponsor">
+						<div v-for="sponsor in indexSettings.sponsors" :key="sponsor.name" class="card card--sponsor">
 							<div class="card-image">
 								<figure class="image">
 									<img
-										data-src="/imgs/sponsors/hro.jpg"
-										alt="Ham Radio Outlet"
-										title="Ham Radio Outlet"
+										:data-src="sponsor.image_href"
+										:alt="sponsor.name"
+										:title="sponsor.name"
 										class="lozad"
 									/>
 								</figure>
 							</div>
 							<div class="card-content">
 								<a
-									href="https://www.hamradio.com/"
+									:href="sponsor.link"
 									target="_blank"
 									rel="noopener"
-									>Ham Radio Outlet</a
-								>
-							</div>
-						</div>
-						<div class="card card--sponsor">
-							<div class="card-image">
-								<figure class="image">
-									<img
-										data-src="/imgs/sponsors/icom.jpg"
-										alt="ICOM"
-										title="ICOM"
-										class="lozad"
-									/>
-								</figure>
-							</div>
-							<div class="card-content">
-								<a
-									href="https://www.icomamerica.com/en/"
-									target="_blank"
-									rel="noopener"
-									>ICOM</a
+									>{{sponsor.name}}</a
 								>
 							</div>
 						</div>
@@ -338,7 +318,9 @@ export default {
   gap: 1rem;
 
   .card--sponsor {
-    max-width: 300px;
+    img {
+      height: 250px;
+    }
   }
 }
 
