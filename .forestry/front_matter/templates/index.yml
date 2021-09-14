@@ -23,6 +23,33 @@ fields:
   config:
     maxSize: 64
   label: Event Flyer
+- name: sponsors
+  type: field_group_list
+  fields:
+  - name: name
+    type: text
+    config:
+      required: true
+    label: Name
+    description: Name of the sponsor
+  - name: image_href
+    type: file
+    config:
+      maxSize: 64
+    label: Image
+    description: The logo of the sponsor.
+  - name: link
+    type: text
+    config:
+      required: true
+    label: Link
+    description: A link to the sponsor's website
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Sponsors
+  description: Copafest Sponsors for the current year
 - type: field_group_list
   name: raffle_prizes
   label: Raffle Prizes
