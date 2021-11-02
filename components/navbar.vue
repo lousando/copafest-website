@@ -39,6 +39,9 @@
 				<nuxt-link class="navbar-item" to="/volunteer">
 					Volunteer
 				</nuxt-link>
+        <nuxt-link class="navbar-item" to="/past_raffle_winners">
+          Past Raffle Winners
+        </nuxt-link>
 			</div>
 			<div class="navbar-end is-hidden-mobile">
 				<div class="navbar-item">
