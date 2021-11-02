@@ -3,39 +3,7 @@
   "event_flyer_text": "Please click here for the official flyer.",
   "event_flyer_path": "/uploads/copafest_2021_flyer.jpg",
   "sponsors": [
-    {
-      "name": "Ham Radio Outlet",
-      "image_href": "/imgs/sponsors/hro.jpg",
-      "link": "https://www.hamradio.com/"
-    },
-    {
-      "name": "ICOM",
-      "image_href": "/imgs/sponsors/icom.jpg",
-      "link": "https://www.icomamerica.com/en/"
-    },
-    {
-      "name": "DX Engineering",
-      "image_href": "/imgs/sponsors/dx_engineering.png",
-      "link": "https://www.dxengineering.com/"
-    },
-    {
-      "name": "MFJ Enterprises",
-      "image_href": "/imgs/sponsors/mfj.jpg",
-      "link": "https://mfjenterprises.com/"
-    }
   ],
   "raffle_prizes": [
-    {
-      "name": "Xiegu G90 SDR 20W HF",
-      "image_path": "/imgs/prizes/prize_1.jpg"
-    },
-    {
-      "name": "Icom IC-2730 Dual Band D-Star Mobile",
-      "image_path": "/imgs/prizes/prize_2.jpg"
-    },
-    {
-      "name": "Yaesu FT-70DR Dual Band Fusion",
-      "image_path": "/imgs/prizes/prize_3.jpg"
-    }
   ]
 }

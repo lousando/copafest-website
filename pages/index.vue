@@ -14,7 +14,7 @@
 				</div>
 
 				<!-- sponsors list -->
-				<div class="box has-text-centered">
+				<div v-if="indexSettings.sponsors.length > 0" class="box has-text-centered">
 					<h3 class="is-size-3">{{ copaFestYear }} Sponsors</h3>
 					<div class="sponsors-container">
 						<div v-for="sponsor in indexSettings.sponsors" :key="sponsor.name" class="card card--sponsor">
@@ -120,10 +120,11 @@
 				</div>
 
 				<div class="box is-size-3">
-					<p>Raffle Prizes</p>
+					<p v-if="indexSettings.raffle_prizes.length > 0">Raffle Prizes</p>
+					<p v-else>Raffle Prizes Still To Be Determined</p>
 				</div>
 
-				<div class="columns is-vcentered prizes-container">
+				<div v-if="indexSettings.raffle_prizes.length > 0" class="columns is-vcentered prizes-container">
 					<div
 						class="column"
 						v-for="(
