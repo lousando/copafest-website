@@ -7,6 +7,10 @@
   ],
   "raffle_prizes": [
     {
+      "name": "RigExpert AA-1400 Antenna Analyzer - 0.1 to 1400 MHz",
+      "image_path": "/uploads/aa-1500big-220x340.jpg"
+    },
+    {
       "name": "MFJ MFJ-1984HP 800W, high power, 40-10 Meters End-Fed Half-wave",
       "image_path": ""
     },
@@ -15,8 +19,12 @@
       "image_path": ""
     },
     {
-      "name": "RigExpert AA-1400 Antenna Analyzer - 0.1 to 1400 MHz",
-      "image_path": "/uploads/aa-1500big-220x340.jpg"
+      "name": "DIAMOND NR-770HA Chrome 144 / 440 MHz Dualband Vertical Mobile Antenna - 40 Inches tall - UHF Connector",
+      "image_path": ""
+    },
+    {
+      "name": "",
+      "image_path": ""
     }
   ]
 }
