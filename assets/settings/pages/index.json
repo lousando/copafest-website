@@ -3,7 +3,12 @@
   "event_flyer_text": "Please click here for the official flyer.",
   "event_flyer_path": "/uploads/copafest_2021_flyer.jpg",
   "sponsors": [
+
   ],
   "raffle_prizes": [
+    {
+      "name": "RigExpert AA-1400 Antenna Analyzer - 0.1 to 1400 MHz",
+      "image_path": "/uploads/aa-1500big-220x340.jpg"
+    }
   ]
 }
