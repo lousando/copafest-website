@@ -7,6 +7,10 @@
   ],
   "raffle_prizes": [
     {
+      "name": "Yaesu FT-70 dual band HT",
+      "image_path": ""
+    },
+    {
       "name": "RigExpert AA-1400 Antenna Analyzer - 0.1 to 1400 MHz",
       "image_path": "/uploads/aa-1500big-220x340.jpg"
     }
