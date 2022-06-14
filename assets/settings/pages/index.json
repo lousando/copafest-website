@@ -3,7 +3,11 @@
   "event_flyer_text": "Please click here for the official flyer.",
   "event_flyer_path": "/uploads/copafest-2022.pdf",
   "sponsors": [
-
+    {
+      "name": "MFJ Enterprises Inc",
+      "image_href": "",
+      "link": "https://mfjenterprises.com/"
+    }
   ],
   "raffle_prizes": [
     {
