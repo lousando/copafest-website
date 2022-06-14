@@ -4,6 +4,11 @@
   "event_flyer_path": "/uploads/copafest-2022.pdf",
   "sponsors": [
     {
+      "name": "Hammond Manufacturing",
+      "image_href": "/uploads/hammondmfg.gif",
+      "link": "https://www.hammfg.com/"
+    },
+    {
       "name": "MFJ Enterprises Inc",
       "image_href": "/uploads/mfjlogo_560x.webp",
       "link": "https://mfjenterprises.com/"
