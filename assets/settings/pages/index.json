@@ -4,6 +4,11 @@
   "event_flyer_path": "/uploads/copafest-2022.pdf",
   "sponsors": [
     {
+      "name": "Bioenno Power",
+      "image_href": "/uploads/logo_bioenno.webp",
+      "link": "https://www.bioennopower.com/"
+    },
+    {
       "name": "American Radio Relay League",
       "image_href": "/uploads/league_diamond_color_high.jpg",
       "link": "http://www.arrl.org/"
