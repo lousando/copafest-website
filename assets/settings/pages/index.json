@@ -27,6 +27,11 @@
       "name": "Bioenno Power",
       "image_href": "/uploads/logo_bioenno.webp",
       "link": "https://www.bioennopower.com/"
+    },
+    {
+      "name": "HamTestOnline",
+      "image_href": "/uploads/ham-test-online-logo.png",
+      "link": "http://www.hamradiolicenseexam.com/"
     }
   ],
   "raffle_prizes": [
