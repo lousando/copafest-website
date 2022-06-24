@@ -4,11 +4,6 @@
   "event_flyer_path": "/uploads/copafest-2022.pdf",
   "sponsors": [
     {
-      "name": "AIRBOSS / Olah Technologies",
-      "image_href": "/uploads/airboss_logo.jpg",
-      "link": "https://www.olahtechnologies.com/"
-    },
-    {
       "name": "American Radio Relay League",
       "image_href": "/uploads/league_diamond_color_high.jpg",
       "link": "http://www.arrl.org/"
@@ -37,6 +32,11 @@
       "name": "HamTestOnline",
       "image_href": "/uploads/ham-test-online-logo.png",
       "link": "http://www.hamradiolicenseexam.com/"
+    },
+    {
+      "name": "AIRBOSS / Olah Technologies",
+      "image_href": "/uploads/airboss_logo.jpg",
+      "link": "https://www.olahtechnologies.com/"
     }
   ],
   "raffle_prizes": [
