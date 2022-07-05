@@ -15,6 +15,10 @@ sections:
 - type: heading
   label: Global
 - type: document
+  path: assets/settings/intro_banner.json
+  label: Banner Intro
+  match: "**/*"
+- type: document
   path: assets/settings/global.json
   label: Settings
 upload_dir: static/uploads

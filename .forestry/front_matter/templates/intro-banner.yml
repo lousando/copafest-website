@@ -2,11 +2,9 @@
 label: Intro Banner
 hide_body: true
 fields:
-  - name: subtext
-    type: text
-    config:
-      required: false
-    label: Banner Subtext
-    default:
-pages:
-  - assets/settings/intro_banner.json
+- name: subtext
+  type: text
+  config:
+    required: false
+  label: Banner Subtext
+  default: 
