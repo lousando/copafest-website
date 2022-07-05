@@ -5,23 +5,25 @@
 			<div class="intro-banner__upper-middle">
 				<!-- spacer-->
 			</div>
-			<div class="intro-banner__upper-right">
-				Presents
-			</div>
+			<div class="intro-banner__upper-right">Presents</div>
 		</div>
 		<div class="intro-banner__main-text">
 			CopaFest {{ this.copaFestYear }}
 		</div>
-		<div class="intro-banner__sub-text">
+		<div class="intro-banner__date-text">
 			{{ this.copaFestDate }}
+		</div>
+		<div class="intro-banner__sub-text">
+			{{ this.introBannerSettings.subtext }}
 		</div>
 	</div>
 </template>
 
 <script>
-  import { DateTime } from "luxon";
+import { DateTime } from "luxon";
+import introBannerSettings from "~/assets/settings/intro_banner.json";
 
-  export default {
+export default {
 	name: "intro_banner",
 	data() {
 		let copaFestDateTime = DateTime.fromISO(
@@ -30,9 +32,10 @@
 
 		return {
 			copaFestDate: copaFestDateTime.toLocaleString(DateTime.DATE_HUGE),
-			copaFestYear: copaFestDateTime.year
+			copaFestYear: copaFestDateTime.year,
+			introBannerSettings,
 		};
-	}
+	},
 };
 </script>
 
@@ -79,7 +82,15 @@
 		@include header-vertical-adjustment;
 	}
 
+	&__date-text {
+		font-size: 2.3rem;
+		color: white;
+		@include intro-banner-text-properties;
+		@include header-vertical-adjustment;
+	}
+
 	&__sub-text {
+		margin-top: 1rem;
 		font-size: 2.3rem;
 		color: white;
 		@include intro-banner-text-properties;
