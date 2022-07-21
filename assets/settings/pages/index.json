@@ -37,6 +37,41 @@
       "name": "AIRBOSS / Olah Technologies",
       "image_href": "/uploads/airboss_logo.jpg",
       "link": "https://www.olahtechnologies.com/"
+    },
+    {
+      "name": "NatCommGroup",
+      "image_href": "/uploads/ncg-logo.gif",
+      "link": "https://cometantenna.com/"
+    },
+    {
+      "name": "Renogy",
+      "image_href": "/uploads/renogy-logo.jpg",
+      "link": "https://renogy.com/"
+    },
+    {
+      "name": "Quicksilver Radio",
+      "image_href": "/uploads/quicksilver-radio-logo.jpg",
+      "link": "https://www.qsradio.com/index.html"
+    },
+    {
+      "name": "FlexRadio Systems",
+      "image_href": "/uploads/flexradio-logo.jpg",
+      "link": "https://www.flexradio.com/"
+    },
+    {
+      "name": "PreciseRF",
+      "image_href": "/uploads/prciserf-logo-transparent.png",
+      "link": "https://preciserf.com/"
+    },
+    {
+      "name": "Penta Laboratories",
+      "image_href": "/uploads/penta-labs-logo.png",
+      "link": "https://pentalabs.com/"
+    },
+    {
+      "name": "Tigertronics",
+      "image_href": "/uploads/tigertronics-logo.png",
+      "link": "http://tigertronics.com/"
     }
   ],
   "raffle_prizes": [
