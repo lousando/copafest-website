@@ -4,6 +4,21 @@
   "event_flyer_path": "/uploads/copafest-2022-arrl-az-state-convention.pdf",
   "sponsors": [
     {
+      "name": "PreppComm",
+      "image_href": "/uploads/preppcomm_amateur_radio_384_360x.webp",
+      "link": "https://www.preppcomm.com/"
+    },
+    {
+      "name": "N3FPJ Amateur Radio Software",
+      "image_href": "/uploads/n3fpj-logo.png",
+      "link": "http://n3fjp.com/index.html"
+    },
+    {
+      "name": "DX Engineering",
+      "image_href": "/uploads/logo-dxengineering.gif",
+      "link": "https://www.dxengineering.com/"
+    },
+    {
       "name": "American Radio Relay League",
       "image_href": "/uploads/league_diamond_color_high.jpg",
       "link": "http://www.arrl.org/"
