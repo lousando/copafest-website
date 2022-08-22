@@ -4,6 +4,11 @@
   "event_flyer_path": "/uploads/copafest-2022-arrl-az-state-convention.pdf",
   "sponsors": [
     {
+      "image_href": "/uploads/heil-sound-logo-light-2x.webp",
+      "name": "Heil Sound",
+      "link": "https://heilsound.com/"
+    },
+    {
       "name": "PreppComm",
       "image_href": "/uploads/preppcomm_amateur_radio_384_360x.webp",
       "link": "https://www.preppcomm.com/"
