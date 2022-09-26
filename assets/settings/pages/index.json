@@ -4,6 +4,11 @@
   "event_flyer_path": "/uploads/copafest-2022-arrl-az-state-convention.pdf",
   "sponsors": [
     {
+      "name": "EasyWayHamBooks.com",
+      "image_href": "/uploads/ewhb-banner.jpg",
+      "link": "www.EasyWayHamBooks.com"
+    },
+    {
       "image_href": "/uploads/heilsoundlogo.png",
       "name": "Heil Sound",
       "link": "https://heilsound.com/"
