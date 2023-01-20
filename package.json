@@ -4,6 +4,13 @@
   "description": "Ham Fest sponsored by Maricopa ARA",
   "author": "Louis Sandoval",
   "private": true,
+  "volta": {
+    "node": "14.21.2",
+    "yarn": "3.3.1"
+  },
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "watch": "nuxt",
     "build": "nuxt generate",
@@ -37,5 +44,6 @@
     "prettier": "^2.2.1",
     "sass-loader": "^10.1.1",
     "vue-jest": "^3.0.6"
-  }
+  },
+  "packageManager": "yarn@1.22.19"
 }
