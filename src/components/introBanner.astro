@@ -1,7 +1,6 @@
 ---
 import { getGlobalSettings } from "../utils/globalSettings.ts"
 import { DateTime } from "luxon";
-import introBannerSettings from "../assets/settings/intro_banner.json";
 
 const globalSettings = await getGlobalSettings();
 const copaFestDateTime = DateTime.fromSQL(
@@ -26,7 +25,6 @@ const copaFestYear = copaFestDateTime.year;
     {copaFestDate}
   </div>
   <div class="intro-banner__sub-text">
-    {introBannerSettings.subtext}
   </div>
 </div>
 
