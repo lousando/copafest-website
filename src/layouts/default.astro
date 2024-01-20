@@ -1,13 +1,14 @@
 ---
 import "bulma/css/bulma.css";
-
+import { renderRichText } from '@storyblok/astro'
 import Navbar from "../components/navbar.astro";
 import Footer from "../components/footer.astro";
+import { getGlobalSettings } from "../utils/globalSettings";
 
-import globalSettings from "../assets/settings/global.json";
+const globalSettings = await getGlobalSettings()
 import { DateTime } from "luxon";
 
-const currentYear = DateTime.fromISO(globalSettings.copa_fest_date).year;
+const currentYear = DateTime.fromSQL(globalSettings.copafest_date).year;
 ---
 
 <script lang="ts">
@@ -52,10 +53,10 @@ const currentYear = DateTime.fromISO(globalSettings.copa_fest_date).year;
 	<body>
   <div>
     <Navbar />
-    {globalSettings.notifications.map((n: { type: string, text: string }) => (
+    {globalSettings.notifications.map((n: { style: string, text: Object }) => (
       <div
-        class={`notification is-light has-text-centered ${n.type.toLowerCase() ? 'is-' + n.type.toLowerCase() : ''}`}
-        set:html={n.text}
+        class={`notification is-light has-text-centered ${n.style.toLowerCase()}`}
+        set:html={renderRichText(n.text)}
       >
       </div>
     ))}
@@ -85,10 +86,7 @@ const currentYear = DateTime.fromISO(globalSettings.copa_fest_date).year;
   @import "../assets/global.scss";
 
   .notification {
-    position: sticky;
-    top: 2.5rem;
-    margin-bottom: 0;
-    z-index: 20;
+    margin-bottom: 0 !important;
     font-family: Verdana, sans-serif;
   }
 

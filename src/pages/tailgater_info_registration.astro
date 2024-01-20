@@ -1,10 +1,12 @@
 ---
 import Layout from "../layouts/default.astro";
-import globalSettings from "../assets/settings/global.json";
 import pageSettings from "../assets/settings/pages/tailgater_info_registration.json";
 import { DateTime } from "luxon";
+import { getGlobalSettings } from "../utils/globalSettings";
 
-const copaFestYear = DateTime.fromISO(globalSettings.copa_fest_date).year
+const globalSettings = await getGlobalSettings();
+
+const copaFestYear = DateTime.fromSQL(globalSettings.copafest_date).year
 
 const mailtoHref = `mailto:${globalSettings.copa_fest_email}?subject=${encodeURIComponent(
 `CopaFest ${copaFestYear}: ${pageSettings.tailgater_email_subject}`

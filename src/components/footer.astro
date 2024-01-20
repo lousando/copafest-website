@@ -1,14 +1,17 @@
 ---
-// fix this
+import { renderRichText } from '@storyblok/astro'
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import globalSettings from "../assets/settings/global.json"
+import { getGlobalSettings } from "../utils/globalSettings";
+
+const globalSettings = await getGlobalSettings()
+const donationPitch = renderRichText(globalSettings.donation_pitch);
 ---
 
 <footer class="footer has-text-centered">
 		<div class="columns">
 			<div class="column">
-				<p set:html={globalSettings.donation_pitch} />
+				<p set:html={donationPitch} />
 				<form
 					action="https://www.paypal.com/cgi-bin/webscr"
 					method="post"
