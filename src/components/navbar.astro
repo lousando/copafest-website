@@ -1,0 +1,83 @@
+---
+import globalSettings from "../assets/settings/global.json";
+import { DateTime } from "luxon";
+
+const copaFestDateTime = DateTime.fromISO(globalSettings.copa_fest_date);
+
+const copaFestDate = copaFestDateTime.toLocaleString(DateTime.DATE_HUGE);
+const copaFestYear = copaFestDateTime.year;
+---
+
+<script>
+  const navbarBurger = document.getElementById("navbar-burger");
+  const navbarMenu = document.getElementById("navbar-menu");
+
+  navbarBurger?.addEventListener("click", () => {
+    navbarBurger?.classList?.toggle("is-active")
+    navbarMenu?.classList?.toggle("is-active")
+  })
+</script>
+
+<nav
+  class="navbar is-fixed-top is-black is-transparent"
+  role="navigation"
+  aria-label="main navigation"
+>
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      CopaFest {copaFestYear}
+    </a>
+    <a
+      id="navbar-burger"
+      role="button"
+      class="navbar-burger"
+      aria-label="menu"
+      aria-expanded="false"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div
+    id="navbar-menu"
+    class="navbar-menu"
+  >
+    <div class="navbar-start">
+      <a
+        class="navbar-item"
+        href="/tailgater_info_registration"
+      >
+        Tailgater Info &amp; Registration
+      </a>
+      <a class="navbar-item" href="/volunteer">
+        Volunteer
+      </a>
+      <a class="navbar-item" href="/past_raffle_winners">
+        Past Raffle Winners
+      </a>
+    </div>
+    <div class="navbar-end is-hidden-mobile">
+      <div class="navbar-item">
+        {copaFestDate}
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style lang="scss">
+  .navbar-brand {
+    animation: fade-in 1s ease-in-out;
+  }
+
+  @keyframes fade-in {
+    0% {
+      transform: translateX(-5vw);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+</style>

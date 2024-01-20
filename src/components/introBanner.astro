@@ -1,0 +1,91 @@
+---
+import { DateTime } from "luxon";
+import introBannerSettings from "../assets/settings/intro_banner.json";
+import globalSettings from "../assets/settings/global.json"
+
+
+const copaFestDateTime = DateTime.fromISO(
+  globalSettings.copa_fest_date
+);
+const copaFestDate = copaFestDateTime.toLocaleString(DateTime.DATE_HUGE);
+const copaFestYear = copaFestDateTime.year;
+---
+
+<div class="intro-banner">
+  <div class="intro-banner__upper">
+    <div class="intro-banner__upper-left">Maricopa<br />ARA</div>
+    <div class="intro-banner__upper-middle">
+      <!-- spacer-->
+    </div>
+    <div class="intro-banner__upper-right">Presents</div>
+  </div>
+  <div class="intro-banner__main-text">
+    CopaFest {copaFestYear}
+  </div>
+  <div class="intro-banner__date-text">
+    {copaFestDate}
+  </div>
+  <div class="intro-banner__sub-text">
+    {introBannerSettings.subtext}
+  </div>
+</div>
+
+<style lang="scss">
+@import "../assets/global.scss";
+
+@mixin intro-banner-text-properties {
+	color: white;
+	text-shadow: -0.1rem -0.1rem 0 black, 0.1rem -0.1rem 0 black,
+		-0.1rem 0.1rem 0 black, 0.1rem 0.1rem 0 black;
+	background-color: $az-blue;
+}
+
+.intro-banner {
+	text-align: center;
+	font-family: "Lalezar", sans-serif;
+	background-color: $az-blue;
+
+	&__upper {
+		display: flex;
+		justify-content: space-around;
+		@include intro-banner-text-properties;
+		@include header-vertical-adjustment;
+	}
+
+	&__upper-left,
+	&__upper-right {
+		font-size: 2rem;
+		transform: translateY(-20%);
+
+		// mobile styles
+		@media (max-width: 600px) {
+			& {
+				font-size: 1.5rem;
+				transform: translateY(-100%);
+			}
+		}
+	}
+
+	&__main-text {
+		font-size: 4rem;
+		color: white;
+		@include intro-banner-text-properties;
+		@include header-vertical-adjustment;
+	}
+
+	&__date-text {
+		font-size: 2.3rem;
+		color: white;
+		@include intro-banner-text-properties;
+		@include header-vertical-adjustment;
+	}
+
+	&__sub-text {
+		margin-top: 1rem;
+		font-size: 2.3rem;
+		color: white;
+		@include intro-banner-text-properties;
+		@include header-vertical-adjustment;
+	}
+}
+</style>

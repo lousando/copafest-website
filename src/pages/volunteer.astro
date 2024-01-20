@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/default.astro"
+import volunteerSettings from "../assets/settings/pages/volunteer.json";
+import globalSettings from "../assets/settings/global.json"
+import { DateTime } from "luxon";
+
+const copaFestYear = DateTime.fromISO(globalSettings.copa_fest_date).year
+
+const mailtoHref = `mailto:${globalSettings.copa_fest_email
+}?subject=${encodeURIComponent(
+  `CopaFest ${copaFestYear}: ${volunteerSettings.volunteer_email_subject}`
+)}&body=${encodeURIComponent(
+  volunteerSettings.volunteer_email_body
+)}`;
+---
+
+<Layout>
+	<section class="section">
+		<div class="container is-fluid">
+			<div class="content">
+				<div class="box">
+          <h2>{volunteerSettings.header}</h2>
+					<div set:html={volunteerSettings.content} />
+					<div>
+						<a href={mailtoHref}>
+							<button
+								class="square-button square-button--yellow"
+              >{volunteerSettings.button_text}</button>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>

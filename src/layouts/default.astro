@@ -1,0 +1,113 @@
+---
+import "bulma/css/bulma.css";
+
+import Navbar from "../components/navbar.astro";
+import Footer from "../components/footer.astro";
+
+import globalSettings from "../assets/settings/global.json";
+import { DateTime } from "luxon";
+
+const currentYear = DateTime.fromISO(globalSettings.copa_fest_date).year;
+---
+
+<script lang="ts">
+  /**
+   * Most likely using an add blocker.
+   * Don't slow down the page by making a request
+   * that'll likely be blocked.
+   */
+  // @ts-ignore
+  if (globalThis.navigator.doNotTrack !== "1") {
+    const gaId = "UA-156478886-1";
+
+    let trackingScript = document.createElement("script");
+    trackingScript.defer = true;
+    trackingScript.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+    document.head.appendChild(trackingScript);
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+    gtag("config", gaId);
+  }
+</script>
+
+<!doctype html>
+<html lang="en" class="has-navbar-fixed-top">
+	<head>
+		<meta charset="UTF-8" />
+    <meta name="description" content="Ham Fest sponsored by Maricopa ARA">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#023373">
+    <meta name="google-site-verification" content="ygTnkMr3NG238Kqlw1M-56vWImTIy0NusuhHGyf6UrY">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Istok+Web|Lalezar&display=swap" />
+		<link rel="icon" type="image/icon" href="/imgs/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Copafest {currentYear}</title>
+	</head>
+	<body>
+  <div>
+    <Navbar />
+    {globalSettings.notifications.map((n: { type: string, text: string }) => (
+      <div
+        class={`notification is-light has-text-centered ${n.type.toLowerCase() ? 'is-' + n.type.toLowerCase() : ''}`}
+        set:html={n.text}
+      >
+      </div>
+    ))}
+    <header class="header">
+      <div class="header__rays" />
+      <img
+        class="header__az-star"
+        src="/imgs/arizona_star.svg"
+        alt="AZ Star"
+      />
+    </header>
+      <slot />
+    <Footer />
+  </div>
+  </body>
+</html>
+
+<style lang="scss" is:global>
+  body {
+    color: black;
+    background: whitesmoke;
+    font-family: "Istok Web", sans-serif;
+  }
+</style>
+
+<style lang="scss">
+  @import "../assets/global.scss";
+
+  .notification {
+    position: sticky;
+    top: 2.5rem;
+    margin-bottom: 0;
+    z-index: 20;
+    font-family: Verdana, sans-serif;
+  }
+
+  .header {
+    text-align: center;
+    font-family: "Lalezar", sans-serif;
+    background-color: $az-blue;
+
+    &__rays {
+      background-image: url("/imgs/arizona_rays.svg");
+      background-size: cover;
+      background-position: bottom;
+      height: 20vh;
+    }
+
+    &__az-star {
+      width: 10rem;
+      height: 10rem;
+      @include header-vertical-adjustment;
+    }
+  }
+</style>
