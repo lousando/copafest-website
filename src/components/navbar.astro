@@ -1,6 +1,8 @@
 ---
-import { getGlobalSettings } from "../utils/globalSettings";
+import { storyblokEditable } from '@storyblok/astro'
+import { getGlobalSettings } from "../utils/stories";
 import { DateTime } from "luxon";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro"
 
 const globalSettings = await getGlobalSettings();
 const copaFestDateTime = DateTime.fromSQL(globalSettings.copafest_date);
@@ -23,6 +25,7 @@ const copaFestYear = copaFestDateTime.year;
   class="navbar is-fixed-top is-black is-transparent"
   role="navigation"
   aria-label="main navigation"
+  {...storyblokEditable(globalSettings)}
 >
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
@@ -45,18 +48,11 @@ const copaFestYear = copaFestDateTime.year;
     class="navbar-menu"
   >
     <div class="navbar-start">
-      <a
-        class="navbar-item"
-        href="/tailgater_info_registration"
-      >
-        Tailgater Info &amp; Registration
-      </a>
-      <a class="navbar-item" href="/volunteer">
-        Volunteer
-      </a>
-      <a class="navbar-item" href="/past_raffle_winners">
-        Past Raffle Winners
-      </a>
+      {globalSettings.navbar_items?.map(blok => (
+        <StoryblokComponent
+          blok={blok}
+          {...storyblokEditable(blok)}
+        />))}
     </div>
     <div class="navbar-end is-hidden-mobile">
       <div class="navbar-item">

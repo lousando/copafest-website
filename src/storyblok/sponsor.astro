@@ -1,0 +1,27 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+const { blok } = Astro.props;
+---
+
+<div class="card card--blok" {...storyblokEditable(blok)}>
+  <div class="card-image">
+    <figure class="image">
+      <img
+        class="sponsor-image"
+        src={blok.image_src.filename}
+        alt={blok.image_src.alt}
+        title={blok.image_src.alt}
+        loading="lazy"
+      />
+    </figure>
+  </div>
+  <div class="card-content">
+    <a href={blok.link} target="_blank" rel="noopener">{blok.name}</a>
+  </div>
+</div>
+
+<style lang="scss">
+  .sponsor-image {
+    height: 250px;
+  }
+</style>

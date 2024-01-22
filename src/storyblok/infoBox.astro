@@ -1,0 +1,21 @@
+---
+interface Props {
+  blok: {
+    style: string;
+    alignment: string;
+    text: ISbRichtext;
+  }
+}
+import { storyblokEditable, renderRichText, ISbRichtext } from '@storyblok/astro'
+
+const { blok } = Astro.props
+---
+
+<div class:list={[
+  "notification",
+  blok.style === 'default' ? '' : blok.style,
+  blok.alignment
+]}
+     set:html={renderRichText(blok.text)}
+     {...storyblokEditable(blok)}>
+</div>

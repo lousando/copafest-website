@@ -1,14 +1,18 @@
 ---
 import "bulma/css/bulma.css";
-import { renderRichText } from '@storyblok/astro'
+import { storyblokEditable, renderRichText } from '@storyblok/astro'
 import Navbar from "../components/navbar.astro";
 import Footer from "../components/footer.astro";
-import { getGlobalSettings } from "../utils/globalSettings";
+import { getGlobalSettings } from "../utils/stories";
+import { Schema } from "astro-seo-schema"
 
 const globalSettings = await getGlobalSettings()
 import { DateTime } from "luxon";
 
-const currentYear = DateTime.fromSQL(globalSettings.copafest_date).year;
+const copaFestDate = DateTime.fromSQL(globalSettings.copafest_date);
+const currentYear = copaFestDate.year;
+
+const { pageTitle } = Astro.props;
 ---
 
 <script lang="ts">
@@ -48,29 +52,75 @@ const currentYear = DateTime.fromSQL(globalSettings.copafest_date).year;
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Istok+Web|Lalezar&display=swap" />
 		<link rel="icon" type="image/icon" href="/imgs/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Copafest {currentYear}</title>
+		<title>Copafest {currentYear} {pageTitle ? ` | ${pageTitle}` : ""}</title>
+    <Schema
+      item={{
+        "@context": "https://www.schema.org",
+        "@type": "Event",
+        name: "CopaFest",
+        url: "https://www.copafest.org/",
+        description: "Come on down and finally put a face to that voice!",
+        image: "https://www.copahams.org/imgs/mara_logo.svg",
+
+        eventStatus: "https://schema.org/EventScheduled",
+        eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+
+        organizer: {
+          "@type": "Organization",
+          name: "Maricopa ARA",
+          url: "https://www.copahams.org",
+        },
+
+        startDate: copaFestDate.toISO(),
+        endDate: copaFestDate.toISO(),
+
+        location: {
+          "@type": "Place",
+          name: "Ak-Chin Circle Entertainment Center",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "16000 N Maricopa Rd",
+            addressLocality: "Maricopa",
+            addressRegion: "AZ",
+            postalCode: "85139",
+            addressCountry: "USA",
+          },
+        },
+
+        offers: {
+          "@type": "Offer",
+          validFrom: copaFestDate.year,
+          description: "Raffle Tickets",
+          url: "https://www.copafest.org/",
+          price: "10.00",
+          priceCurrency: "USD",
+          availability: "https://schema.org/PreOrder",
+        },
+      }}
+    />
 	</head>
 	<body>
-  <div>
-    <Navbar />
-    {globalSettings.notifications.map((n: { style: string, text: Object }) => (
-      <div
-        class={`notification is-light has-text-centered ${n.style.toLowerCase()}`}
-        set:html={renderRichText(n.text)}
-      >
-      </div>
-    ))}
-    <header class="header">
-      <div class="header__rays" />
-      <img
-        class="header__az-star"
-        src="/imgs/arizona_star.svg"
-        alt="AZ Star"
-      />
-    </header>
-      <slot />
-    <Footer />
-  </div>
+    <div>
+      <Navbar />
+      {globalSettings.notifications.map((n: { style: string, text: Object }) => (
+        <div
+          class={`notification is-light has-text-centered ${n.style?.toLowerCase()}`}
+          set:html={renderRichText(n.text)}
+          {...storyblokEditable(globalSettings)}
+        >
+        </div>
+      ))}
+      <header class="header">
+        <div class="header__rays" />
+        <img
+          class="header__az-star"
+          src="/imgs/arizona_star.svg"
+          alt="AZ Star"
+        />
+      </header>
+        <slot />
+      <Footer />
+    </div>
   </body>
 </html>
 
@@ -83,7 +133,7 @@ const currentYear = DateTime.fromSQL(globalSettings.copafest_date).year;
 </style>
 
 <style lang="scss">
-  @import "../assets/global.scss";
+  @use "../assets/global.scss" as global;
 
   .notification {
     margin-bottom: 0 !important;
@@ -93,7 +143,7 @@ const currentYear = DateTime.fromSQL(globalSettings.copafest_date).year;
   .header {
     text-align: center;
     font-family: "Lalezar", sans-serif;
-    background-color: $az-blue;
+    background-color: global.$az-blue;
 
     &__rays {
       background-image: url("/imgs/arizona_rays.svg");
@@ -105,7 +155,7 @@ const currentYear = DateTime.fromSQL(globalSettings.copafest_date).year;
     &__az-star {
       width: 10rem;
       height: 10rem;
-      @include header-vertical-adjustment;
+      @include global.header-vertical-adjustment;
     }
   }
 </style>

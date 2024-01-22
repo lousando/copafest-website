@@ -1,0 +1,30 @@
+box.astro
+---
+interface Props {
+  blok: {
+    size: number;
+    address: string;
+  };
+}
+
+import { storyblokEditable } from "@storyblok/astro";
+const { blok } = Astro.props;
+
+const gMapsURL = `https://www.google.com/maps/embed/v1/place?key=${import.meta.env.GMAPS_API_KEY}&q=${encodeURIComponent(
+  blok.address
+)}`;
+---
+
+<iframe
+  width={blok.size}
+  height={blok.size}
+  src={gMapsURL}
+  allowfullscreen
+  {...storyblokEditable(blok)}
+/>
+
+<style lang="scss">
+  iframe {
+    border: 0;
+  }
+</style>

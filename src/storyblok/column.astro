@@ -1,0 +1,28 @@
+box.astro
+---
+interface Props {
+  blok: {
+    size?: string;
+    alignment?: string;
+    column_content?: Array<Object>;
+  };
+}
+
+import { storyblokEditable } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+const { blok } = Astro.props;
+const { size = "", alignment = "" } = blok;
+---
+
+<div class:list={[
+  "column",
+  size,
+  alignment,
+  { "is-flex is-flex-direction-column": blok.alignment }
+]}>
+  {blok?.column_content?.map(blok => (
+    <StoryblokComponent
+      blok={blok}
+      {...storyblokEditable(blok)}
+    />))}
+</div>

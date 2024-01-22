@@ -20,6 +20,8 @@
     "@astrojs/check": "^0.4.1",
     "@astrojs/vue": "^4.0.8",
     "astro": "^4.2.1",
+    "astro-seo-schema": "^4.0.0",
+    "schema-dts": "^1.1.2",
     "typescript": "^5.3.3",
     "vue": "^3.4.15"
   },
