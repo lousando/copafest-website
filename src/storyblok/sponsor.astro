@@ -15,13 +15,14 @@ const { blok } = Astro.props;
       />
     </figure>
   </div>
-  <div class="card-content">
+  <div class="card-content has-text-centered">
     <a href={blok.link} target="_blank" rel="noopener">{blok.name}</a>
   </div>
 </div>
 
 <style lang="scss">
   .sponsor-image {
-    height: 250px;
+    max-width: 250px;
+    max-height: 300px;
   }
 </style>
