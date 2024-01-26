@@ -1,12 +1,13 @@
-box.astro---
+box.astro
+---
 interface Props {
   blok: {
     is_mobile: boolean;
-    row_content?: Array<Object>;
-  }
+    row_content?: Array<SbBlokData>;
+  };
 }
 
-import { storyblokEditable } from "@storyblok/astro";
+import { storyblokEditable, type SbBlokData } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 const { blok } = Astro.props;
 ---

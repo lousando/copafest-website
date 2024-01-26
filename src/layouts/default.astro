@@ -1,12 +1,12 @@
 ---
 import "bulma/css/bulma.css";
-import { storyblokEditable, renderRichText } from '@storyblok/astro'
+import { storyblokEditable, renderRichText, type ISbRichtext } from "@storyblok/astro";
 import Navbar from "../components/navbar.astro";
 import Footer from "../components/footer.astro";
 import { getGlobalSettings } from "../utils/stories";
-import { Schema } from "astro-seo-schema"
+import { Schema } from "astro-seo-schema";
 
-const globalSettings = await getGlobalSettings()
+const globalSettings = await getGlobalSettings();
 import { DateTime } from "luxon";
 
 const copaFestDate = DateTime.fromSQL(globalSettings.copafest_date);
@@ -15,114 +15,115 @@ const currentYear = copaFestDate.year;
 const { pageTitle } = Astro.props;
 ---
 
-<script lang="ts">
-  /**
-   * Most likely using an add blocker.
-   * Don't slow down the page by making a request
-   * that'll likely be blocked.
-   */
-  // @ts-ignore
-  if (globalThis.navigator.doNotTrack !== "1") {
-    const gaId = "UA-156478886-1";
-
-    let trackingScript = document.createElement("script");
-    trackingScript.defer = true;
-    trackingScript.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
-    document.head.appendChild(trackingScript);
-
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag("js", new Date());
-    gtag("config", gaId);
-  }
-</script>
-
 <!doctype html>
 <html lang="en" class="has-navbar-fixed-top">
-	<head>
-		<meta charset="UTF-8" />
-    <meta name="description" content="Ham Fest sponsored by Maricopa ARA">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#023373">
-    <meta name="google-site-verification" content="ygTnkMr3NG238Kqlw1M-56vWImTIy0NusuhHGyf6UrY">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Istok+Web|Lalezar&display=swap" />
-		<link rel="icon" type="image/icon" href="/imgs/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Copafest {currentYear} {pageTitle ? ` | ${pageTitle}` : ""}</title>
-    <Schema
-      item={{
-        "@context": "https://www.schema.org",
-        "@type": "Event",
-        name: "CopaFest",
-        url: "https://www.copafest.org/",
-        description: "Come on down and finally put a face to that voice!",
-        image: "https://www.copahams.org/imgs/mara_logo.svg",
+<head>
+	<meta charset="UTF-8" />
+	<meta name="description" content="Ham Fest sponsored by Maricopa ARA">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="theme-color" content="#023373">
+	<meta name="google-site-verification" content="ygTnkMr3NG238Kqlw1M-56vWImTIy0NusuhHGyf6UrY">
+	<link rel="stylesheet"
+		  href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Istok+Web|Lalezar&display=swap" />
+	<link rel="icon" type="image/icon" href="/imgs/favicon.ico" />
+	<meta name="generator" content={Astro.generator} />
+	<title>Copafest {currentYear} {pageTitle ? ` | ${pageTitle}` : ""}</title>
+	<Schema
+		item={{
+			"@context": "https://schema.org",
+			"@type": "Event",
+			name: "CopaFest",
+			url: "https://www.copafest.org/",
+			description: "Come on down and finally put a face to that voice!",
+			image: "https://www.copahams.org/imgs/mara_logo.svg",
 
-        eventStatus: "https://schema.org/EventScheduled",
-        eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+			eventStatus: "https://schema.org/EventScheduled",
+			eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
 
-        organizer: {
-          "@type": "Organization",
-          name: "Maricopa ARA",
-          url: "https://www.copahams.org",
-        },
+			organizer: {
+				"@type": "Organization",
+				name: "Maricopa ARA",
+				url: "https://www.copahams.org"
+			},
 
-        startDate: copaFestDate.toISO(),
-        endDate: copaFestDate.toISO(),
+			startDate: String(copaFestDate.toISO()),
+			endDate: String(copaFestDate.toISO()),
 
-        location: {
-          "@type": "Place",
-          name: "Ak-Chin Circle Entertainment Center",
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: "16000 N Maricopa Rd",
-            addressLocality: "Maricopa",
-            addressRegion: "AZ",
-            postalCode: "85139",
-            addressCountry: "USA",
-          },
-        },
+			location: {
+				"@type": "Place",
+				name: "Ak-Chin Circle Entertainment Center",
+				address: {
+					"@type": "PostalAddress",
+					streetAddress: "16000 N Maricopa Rd",
+					addressLocality: "Maricopa",
+					addressRegion: "AZ",
+					postalCode: "85139",
+					addressCountry: "USA"
+				}
+			},
 
-        offers: {
-          "@type": "Offer",
-          validFrom: copaFestDate.year,
-          description: "Raffle Tickets",
-          url: "https://www.copafest.org/",
-          price: "10.00",
-          priceCurrency: "USD",
-          availability: "https://schema.org/PreOrder",
-        },
-      }}
-    />
-	</head>
-	<body>
-    <div>
-      <Navbar />
-      {globalSettings.notifications.map((n: { style: string, text: Object }) => (
-        <div
-          class={`notification is-light has-text-centered ${n.style?.toLowerCase()}`}
-          set:html={renderRichText(n.text)}
-          {...storyblokEditable(globalSettings)}
-        >
-        </div>
-      ))}
-      <header class="header">
-        <div class="header__rays" />
-        <img
-          class="header__az-star"
-          src="/imgs/arizona_star.svg"
-          alt="AZ Star"
-        />
-      </header>
-        <slot />
-      <Footer />
-    </div>
-  </body>
+			offers: {
+				"@type": "Offer",
+				validFrom: String(copaFestDate.year),
+				description: "Raffle Tickets",
+				url: "https://www.copafest.org/",
+				price: "10.00",
+				priceCurrency: "USD",
+				availability: "https://schema.org/PreOrder"
+			}
+		}}
+	/>
+</head>
+<body>
+<div>
+	<Navbar />
+	{globalSettings.notifications.map((n: { style: string, text: ISbRichtext }) => (
+		<div
+			class={`notification is-light has-text-centered ${n.style?.toLowerCase()}`}
+			set:html={renderRichText(n.text)}
+			{...storyblokEditable(globalSettings)}
+		>
+		</div>
+	))}
+	<header class="header">
+		<div class="header__rays" />
+		<img
+			class="header__az-star"
+			src="/imgs/arizona_star.svg"
+			alt="AZ Star"
+		/>
+	</header>
+	<slot />
+	<Footer />
+</div>
+</body>
 </html>
+
+<script lang="ts">
+	/**
+	 * Most likely using an add blocker.
+	 * Don't slow down the page by making a request
+	 * that'll likely be blocked.
+	 */
+	// @ts-ignore
+	if (globalThis.navigator.doNotTrack !== "1") {
+		const gaId = "UA-156478886-1";
+
+		let trackingScript = document.createElement("script");
+		trackingScript.defer = true;
+		trackingScript.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+		document.head.appendChild(trackingScript);
+
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+
+		gtag("js", new Date());
+		gtag("config", gaId);
+	}
+</script>
 
 <style lang="scss" is:global>
   body {

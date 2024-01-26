@@ -4,16 +4,16 @@ interface Props {
     style: string;
     alignment: string;
     text: ISbRichtext;
-  }
+  };
 }
-import { storyblokEditable, renderRichText, ISbRichtext } from '@storyblok/astro'
+import { storyblokEditable, renderRichText, type ISbRichtext } from "@storyblok/astro";
 
-const { blok } = Astro.props
+const { blok } = Astro.props;
 ---
 
 <div class:list={[
   "notification",
-  blok.style === 'default' ? '' : blok.style,
+  blok.style === "default" ? "" : blok.style,
   blok.alignment
 ]}
      set:html={renderRichText(blok.text)}

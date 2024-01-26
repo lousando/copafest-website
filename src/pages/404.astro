@@ -1,42 +1,17 @@
 ---
 import Layout from "../layouts/default.astro";
-import { storyblokEditable } from "@storyblok/astro";
-import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro"
-import { getGlobalSettings, getAllStories } from "../utils/stories";
-export async function getStaticPaths() {
-  const allStories = await getAllStories();
 
-  const slugsToNotGenerate = [
-    "global/settings",
-    "home"
-  ];
-
-  return allStories.filter(s => {
-    return !slugsToNotGenerate.includes(s.full_slug);
-  }).map(s => {
-    return {
-      params: {
-          page: s.slug,
-      },
-      props: {
-        pageName: s.name,
-        pageContent: s.content.page_content,
-      }
-    };
-  });
-}
-
-const { pageName, pageContent } = Astro.props;
+const { pageName } = Astro.props;
 ---
 
 <Layout pageTitle={pageName}>
-  <section class="section">
-    <div class="container has-text-centered">
-      <div class="box">
-        <h1 class="is-size-1">404</h1>
-        <h3 class="is-size-3">Page Not Found</h3>
-        <p>Calling CQ won't help in this instance. Perhaps try another frequency?</p>
-      </div>
-    </div>
-  </section>
+	<section class="section">
+		<div class="container has-text-centered">
+			<div class="box">
+				<h1 class="is-size-1">404</h1>
+				<h3 class="is-size-3">Page Not Found</h3>
+				<p>Calling CQ won't help in this instance. Perhaps try another frequency?</p>
+			</div>
+		</div>
+	</section>
 </Layout>

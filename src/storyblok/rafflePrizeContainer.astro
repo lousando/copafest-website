@@ -1,11 +1,11 @@
 ---
 interface Props {
-  blok: {
-    online_sale_cutoff?: string;
-    raffle_prizes: Array<Object>;
-  };
+	blok: {
+		online_sale_cutoff?: string;
+		raffle_prizes: Array<SbBlokData>;
+	};
 }
-import { storyblokEditable } from "@storyblok/astro";
+import { storyblokEditable, type SbBlokData } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 import Button from "../components/button.astro";
 const { blok } = Astro.props;
@@ -14,67 +14,67 @@ import { DateTime } from "luxon";
 const rafflePrizeCount = blok.raffle_prizes?.length;
 
 const onlineSaleCutOff = DateTime.fromSQL(
-  blok.online_sale_cutoff,
-  { zone: "UTC" }
+	blok.online_sale_cutoff ?? "",
+	{ zone: "UTC" }
 ).setZone("America/Phoenix");
 
 const prettyOnlineSaleCutOff = onlineSaleCutOff.toLocaleString(
-  DateTime.DATETIME_HUGE_WITH_SECONDS
+	DateTime.DATETIME_HUGE_WITH_SECONDS
 );
 ---
 
 <div {...storyblokEditable(blok)}>
-  <div class="is-size-3 has-text-centered">
-    <p>
-      {blok.raffle_prizes?.length > 0 ? "Raffle Prizes" : "Raffle Prizes Still To Be Determined"}
-    </p>
-  </div>
+	<div class="is-size-3 has-text-centered">
+		<p>
+			{blok.raffle_prizes?.length > 0 ? "Raffle Prizes" : "Raffle Prizes Still To Be Determined"}
+		</p>
+	</div>
 
-  {rafflePrizeCount > 0 && (
-    <div class="columns is-vcentered prizes-container">
-      {blok?.raffle_prizes?.map((prize, prizeIndex) => (
-        <StoryblokComponent blok={prize} prizeIndex={prizeIndex} />
-      ))}
-    </div>
-  )}
+	{rafflePrizeCount > 0 && (
+		<div class="columns is-vcentered prizes-container">
+			{blok?.raffle_prizes?.map((prize, prizeIndex) => (
+				<StoryblokComponent blok={prize} prizeIndex={prizeIndex} />
+			))}
+		</div>
+	)}
 
-  {rafflePrizeCount > 0 ? (
-    <div id="raffle-ticket-container" data-sale-cut-off={onlineSaleCutOff.toMillis()}>
-      <div class="raffle-button-container">
-        <form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-          <input type="hidden" name="cmd" value="_s-xclick" />
-          <input type="hidden" name="hosted_button_id" value="X9ALR8DMAEFTN" />
-          <input type="hidden" name="on0" value="Raffle tickets ..." />
-          <input type="hidden" name="os0" value="14 raffle tickets @" />
-          <input type="hidden" name="currency_code" value="USD" />
-          <Button type="submit" text="Buy 14 raffle tickets for $10.00 USD*" />
-        </form>
-        <form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-          <input type="hidden" name="cmd" value="_s-xclick" />
-          <input type="hidden" name="hosted_button_id" value="X9ALR8DMAEFTN" />
-          <input type="hidden" name="on0" value="Raffle tickets ..." />
-          <input type="hidden" name="os0" value="30 raffle tickets @" />
-          <input type="hidden" name="currency_code" value="USD" />
-          <Button type="submit" text="Buy 30 raffle tickets for $20.00 USD*" />
-        </form>
-      </div>
-      <div class="has-text-centered notification is-info">
-        Last day to purchase online tickets will be: {prettyOnlineSaleCutOff}.
-      </div>
-      <div class="has-text-centered notification is-danger">
-        *All ticket sales final.
-      </div>
-    </div>
-  ) : null}
+	{rafflePrizeCount > 0 ? (
+		<div id="raffle-ticket-container" data-sale-cut-off={onlineSaleCutOff.toMillis()}>
+			<div class="raffle-button-container">
+				<form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+					<input type="hidden" name="cmd" value="_s-xclick" />
+					<input type="hidden" name="hosted_button_id" value="X9ALR8DMAEFTN" />
+					<input type="hidden" name="on0" value="Raffle tickets ..." />
+					<input type="hidden" name="os0" value="14 raffle tickets @" />
+					<input type="hidden" name="currency_code" value="USD" />
+					<Button type="submit" text="Buy 14 raffle tickets for $10.00 USD*" />
+				</form>
+				<form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+					<input type="hidden" name="cmd" value="_s-xclick" />
+					<input type="hidden" name="hosted_button_id" value="X9ALR8DMAEFTN" />
+					<input type="hidden" name="on0" value="Raffle tickets ..." />
+					<input type="hidden" name="os0" value="30 raffle tickets @" />
+					<input type="hidden" name="currency_code" value="USD" />
+					<Button type="submit" text="Buy 30 raffle tickets for $20.00 USD*" />
+				</form>
+			</div>
+			<div class="has-text-centered notification is-info">
+				Last day to purchase online tickets will be: {prettyOnlineSaleCutOff}.
+			</div>
+			<div class="has-text-centered notification is-danger">
+				*All ticket sales final.
+			</div>
+		</div>
+	) : null}
 </div>
 
 <script>
-  const raffleTicketContainer = document.getElementById("raffle-ticket-container");
-  const saleCutOff = Number.parseInt(raffleTicketContainer.dataset.saleCutOff);
+	const raffleTicketContainer = document.getElementById("raffle-ticket-container");
+	const saleCutOff = Number.parseInt(raffleTicketContainer?.dataset?.saleCutOff ?? "");
 
-  if (Date.now() > saleCutOff) {
-    raffleTicketContainer.remove();
-  }
+	if (Date.now() > saleCutOff) {
+		raffleTicketContainer?.remove();
+	}
 </script>
 
 <style lang="scss">

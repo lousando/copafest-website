@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/default.astro";
-import { storyblokEditable } from "@storyblok/astro";
-import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro"
+import { storyblokEditable, type SbBlokData } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 import IntroBanner from "../components/introBanner.astro";
 
 import { getStory } from "../utils/stories";
@@ -10,18 +10,18 @@ const homePage = await getStory("index");
 ---
 
 <Layout>
-  <IntroBanner/>
-  <section class="section">
-    <div class="container">
-      <div class="content">
-        {homePage.page_content?.map(blok => (
-          <StoryblokComponent
-            blok={blok}
-            {...storyblokEditable(blok)}
-          />))}
-      </div>
-    </div>
-  </section>
+	<IntroBanner />
+	<section class="section">
+		<div class="container">
+			<div class="content">
+				{homePage.page_content?.map((blok: SbBlokData) => (
+					<StoryblokComponent
+						blok={blok}
+						{...storyblokEditable(blok)}
+					/>))}
+			</div>
+		</div>
+	</section>
 </Layout>
 
 <style lang="scss">

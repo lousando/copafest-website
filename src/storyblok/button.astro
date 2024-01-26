@@ -1,14 +1,15 @@
 ---
-import Button from "../components/button.astro"
+// @ts-ignore
+import Button from "../components/button.astro";
 import { storyblokEditable } from "@storyblok/astro";
-const { blok } = Astro.props
+const { blok } = Astro.props;
 
 let linkURL = "";
 
 switch (blok.link.linktype) {
   case "url":
   case "asset":
-    linkURL = blok.link.url
+    linkURL = blok.link.url;
     break;
   case "email":
     linkURL = `mailto:${blok.link.url}`;
@@ -17,9 +18,9 @@ switch (blok.link.linktype) {
 ---
 
 <div class:list={[
-  blok.alignment,
+  blok.alignment
 ]}>
-  <a href={linkURL} target={blok.link?.target} ref="noopener" {...storyblokEditable(blok)}>
+  <a href={linkURL} target={blok.link?.target} {...storyblokEditable(blok)}>
     <Button text={blok.text} />
   </a>
 </div>

@@ -4,11 +4,11 @@ interface Props {
   blok: {
     size?: string;
     alignment?: string;
-    column_content?: Array<Object>;
+    column_content?: Array<SbBlokData>;
   };
 }
 
-import { storyblokEditable } from "@storyblok/astro";
+import { storyblokEditable, type SbBlokData } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 const { blok } = Astro.props;
 const { size = "", alignment = "" } = blok;

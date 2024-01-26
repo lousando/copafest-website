@@ -1,8 +1,8 @@
 ---
-import { storyblokEditable } from '@storyblok/astro'
+import { storyblokEditable, type SbBlokData } from "@storyblok/astro";
 import { getGlobalSettings } from "../utils/stories";
 import { DateTime } from "luxon";
-import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro"
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 
 const globalSettings = await getGlobalSettings();
 const copaFestDateTime = DateTime.fromSQL(globalSettings.copafest_date);
@@ -16,9 +16,9 @@ const copaFestYear = copaFestDateTime.year;
   const navbarMenu = document.getElementById("navbar-menu");
 
   navbarBurger?.addEventListener("click", () => {
-    navbarBurger?.classList?.toggle("is-active")
-    navbarMenu?.classList?.toggle("is-active")
-  })
+    navbarBurger?.classList?.toggle("is-active");
+    navbarMenu?.classList?.toggle("is-active");
+  });
 </script>
 
 <nav
@@ -48,7 +48,7 @@ const copaFestYear = copaFestDateTime.year;
     class="navbar-menu"
   >
     <div class="navbar-start">
-      {globalSettings.navbar_items?.map(blok => (
+      {globalSettings.navbar_items?.map((blok: SbBlokData) => (
         <StoryblokComponent
           blok={blok}
           {...storyblokEditable(blok)}

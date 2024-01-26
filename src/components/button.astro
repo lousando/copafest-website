@@ -1,14 +1,14 @@
 ---
 interface Props {
-  type?: string;
-  text: string;
+	type?: "button" | "submit" | "reset" | null | undefined;
+	text: string;
 }
 
-const { text, type = "button" } = Astro.props
+const { text, type = "button" } = Astro.props;
 ---
 
 <button type={type} class="square-button square-button--yellow">
-  {text}
+	{text}
 </button>
 
 <style lang="scss">
