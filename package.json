@@ -9,6 +9,9 @@
     "node": "20.11.0",
     "yarn": "4.0.2"
   },
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "watch": "astro dev",
