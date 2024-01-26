@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import storyblok from "@storyblok/astro";
-import vue from "@astrojs/vue";
 import { loadEnv } from "vite";
+import solid from '@astrojs/solid-js';
 
 const env = loadEnv("", process.cwd(), "STORYBLOK");
 
@@ -31,6 +31,6 @@ export default defineConfig({
         region: "eu" // where our content is stored
       }
     }),
-    vue(),
+    solid(),
   ]
 });

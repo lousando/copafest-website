@@ -21,14 +21,13 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
-    "@astrojs/vue": "^4.0.8",
     "astro": "^4.2.1",
     "astro-seo-schema": "^4.0.0",
     "schema-dts": "^1.1.2",
-    "typescript": "^5.3.3",
-    "vue": "^3.4.15"
+    "typescript": "^5.3.3"
   },
   "devDependencies": {
+    "@astrojs/solid-js": "^4.0.1",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/vue-fontawesome": "^3.0.5",
@@ -42,6 +41,7 @@
     "nanostores": "^0.9.5",
     "ordinal": "^1.0.3",
     "sass": "^1.70.0",
+    "solid-js": "^1.8.12",
     "vite": "^5.0.12"
   }
 }
