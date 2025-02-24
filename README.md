@@ -8,9 +8,9 @@
 # create .env file
 cp .env.example .env
 # install dependencies
-yarn
+pnpm i
 # start the project in dev mode
-yarn watch
+pnpm watch
 ```
 
 ## Project Structure 🛠️
