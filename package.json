@@ -6,11 +6,12 @@
   "private": true,
   "type": "module",
   "volta": {
-    "node": "20.11.0",
-    "pnpm": "10.4.1"
+    "node": "20.11.0"
   },
+  "packageManager": "pnpm@10.6.5",
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=20.x",
+    "pnpm": ">=9.x"
   },
   "scripts": {
     "watch": "astro dev",
