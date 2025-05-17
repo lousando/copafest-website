@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/default.astro"
+import pastRaffleWinnersSettings from "../assets/settings/pages/past_raffle_winners.json";
+---
+
+<Layout>
+  <section class="section">
+    <div class="container is-fluid">
+      <div class="content">
+        <div class="box has-text-centered">
+          <h2 class="is-size-2">Past Raffle Winners</h2>
+          {Object.entries(pastRaffleWinnersSettings.past_winners).map(([year, winnersForTheYear]) => (
+            <div>
+              <h4 class="is-size-4 has-text-weight-bold">{year}</h4>
+              {winnersForTheYear.map(winner => (
+                <div class="winners">
+                  <div>{winner.name}</div>
+                  <div>{winner.prize}</div>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+  </section>
+</Layout>
+
+<style lang="scss">
+.winners {
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+</style>

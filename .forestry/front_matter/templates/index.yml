@@ -1,0 +1,65 @@
+---
+label: Index
+hide_body: true
+fields:
+- name: event_pitch
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Event Pitch
+  description: A quick run-down on what will be at CopaFest this year.
+- name: event_flyer_text
+  type: text
+  config:
+    required: false
+  label: Event Flyer Text
+  default: Please click here for the official flyer.
+- name: event_flyer_path
+  type: file
+  config:
+    maxSize: 64
+  label: Event Flyer
+- name: sponsors
+  type: field_group_list
+  fields:
+  - name: name
+    type: text
+    config:
+      required: true
+    label: Name
+    description: Name of the sponsor
+  - name: image_href
+    type: file
+    config:
+      maxSize: 64
+    label: Image
+    description: The logo of the sponsor.
+  - name: link
+    type: text
+    config:
+      required: true
+    label: Link
+    description: A link to the sponsor's website
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Sponsors
+  description: Copafest Sponsors for the current year
+- type: field_group_list
+  name: raffle_prizes
+  label: Raffle Prizes
+  fields:
+  - type: text
+    name: name
+    label: Prize Name
+  - type: file
+    name: image_path
+    label: Prize Image
+  description: The prizes that will be given out at the raffle this year
+pages:
+- assets/settings/pages/index.json

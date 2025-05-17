@@ -1,6 +1,5 @@
 ---
-import { storyblokEditable } from "@storyblok/astro";
-import { getGlobalSettings } from "../utils/stories.ts"
+import { getGlobalSettings } from "../utils/globalSettings.ts"
 import { DateTime } from "luxon";
 
 const globalSettings = await getGlobalSettings();
@@ -11,7 +10,7 @@ const copaFestDate = copaFestDateTime.toLocaleString(DateTime.DATE_HUGE);
 const copaFestYear = copaFestDateTime.year;
 ---
 
-<div class="intro-banner" {...storyblokEditable(globalSettings)}>
+<div class="intro-banner">
   <div class="intro-banner__upper">
     <div class="intro-banner__upper-left">Maricopa<br />ARA</div>
     <div class="intro-banner__upper-middle">
@@ -30,25 +29,25 @@ const copaFestYear = copaFestDateTime.year;
 </div>
 
 <style lang="scss">
-@use "../assets/global.scss" as global;
+@import "../assets/global.scss";
 
 @mixin intro-banner-text-properties {
 	color: white;
 	text-shadow: -0.1rem -0.1rem 0 black, 0.1rem -0.1rem 0 black,
 		-0.1rem 0.1rem 0 black, 0.1rem 0.1rem 0 black;
-	background-color: global.$az-blue;
+	background-color: $az-blue;
 }
 
 .intro-banner {
 	text-align: center;
 	font-family: "Lalezar", sans-serif;
-	background-color: global.$az-blue;
+	background-color: $az-blue;
 
 	&__upper {
 		display: flex;
 		justify-content: space-around;
 		@include intro-banner-text-properties;
-		@include global.header-vertical-adjustment;
+		@include header-vertical-adjustment;
 	}
 
 	&__upper-left,
@@ -69,14 +68,14 @@ const copaFestYear = copaFestDateTime.year;
 		font-size: 4rem;
 		color: white;
 		@include intro-banner-text-properties;
-		@include global.header-vertical-adjustment;
+		@include header-vertical-adjustment;
 	}
 
 	&__date-text {
 		font-size: 2.3rem;
 		color: white;
 		@include intro-banner-text-properties;
-		@include global.header-vertical-adjustment;
+		@include header-vertical-adjustment;
 	}
 
 	&__sub-text {
@@ -84,7 +83,7 @@ const copaFestYear = copaFestDateTime.year;
 		font-size: 2.3rem;
 		color: white;
 		@include intro-banner-text-properties;
-		@include global.header-vertical-adjustment;
+		@include header-vertical-adjustment;
 	}
 }
 </style>

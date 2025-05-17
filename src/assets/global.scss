@@ -7,3 +7,19 @@ $az-yellow: #F2B705;
 @mixin header-vertical-adjustment {
   transform: translateY(-80px);
 }
+
+.square-button {
+  cursor: pointer;
+  padding: 0.5rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0.5rem;
+  box-shadow: 0 2px 2px darkgray;
+
+  &--yellow {
+    color: black;
+    border-style: hidden;
+    background-color: $az-yellow;
+  }
+
+}

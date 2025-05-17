@@ -1,0 +1,10 @@
+---
+label: Intro Banner
+hide_body: true
+fields:
+- name: subtext
+  type: text
+  config:
+    required: false
+  label: Banner Subtext
+  default: 
