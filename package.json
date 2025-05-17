@@ -17,9 +17,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.4.1",
-    "@astrojs/vue": "^4.5.3",
-    "astro": "^4.16.18",
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/vue": "^5.0.13",
+    "astro": "^5.7.13",
     "typescript": "^5.8.3",
     "vue": "^3.5.14"
   },
@@ -27,13 +27,11 @@
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/vue-fontawesome": "^3.0.8",
-    "@nanostores/vue": "^0.10.0",
     "@types/lozad": "^1.16.4",
     "@types/luxon": "^3.6.2",
     "bulma": "^0.9.4",
     "lozad": "^1.16.0",
     "luxon": "^3.6.1",
-    "nanostores": "^0.9.5",
     "ordinal": "^1.0.3",
     "sass": "^1.89.0"
   }
