@@ -1,7 +1,7 @@
-// import settings from "./settings/global";
+import settings from "./settings/global";
 import { DateTime } from "luxon";
 
-const luxonCopaFestDate = DateTime.fromSQL(settings.copafest_date, {
+const luxonCopaFestDate = DateTime.fromISO(settings.copa_fest_date, {
 	zone: "America/Phoenix",
 });
 

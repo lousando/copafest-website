@@ -1,9 +1,8 @@
 ---
-import { getGlobalSettings } from "../utils/globalSettings";
+import globalSettings from "../assets/settings/global.json";
 import { DateTime } from "luxon";
 
-const globalSettings = await getGlobalSettings();
-const copaFestDateTime = DateTime.fromSQL(globalSettings.copafest_date);
+const copaFestDateTime = DateTime.fromISO(globalSettings.copa_fest_date);
 
 const copaFestDate = copaFestDateTime.toLocaleString(DateTime.DATE_HUGE);
 const copaFestYear = copaFestDateTime.year;

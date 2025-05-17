@@ -1,24 +1,25 @@
 ---
 import Layout from "../layouts/default.astro";
 
-import { getGlobalSettings } from "../utils/globalSettings";
+// todo: convert this to Astro
 import IntroBanner from "../components/introBanner.astro";
 import indexSettings from "../assets/settings/pages/index.json";
+import globalSettings from "../assets/settings/global.json";
 import ordinal from "ordinal";
 import { DateTime } from "luxon";
 
-const globalSettings = await getGlobalSettings();
-const copaFestDateTime = DateTime.fromSQL(
-  globalSettings.copafest_date
+const copaFestDateTime = DateTime.fromISO(
+  globalSettings.copa_fest_date
 );
+
 const copaFestYear = copaFestDateTime.year;
-const lastDayForOnlineRaffleTicketSale = DateTime.fromSQL(
+const lastDayForOnlineRaffleTicketSale = DateTime.fromISO(
   globalSettings
     .last_day_for_online_raffle_ticket_sale
 ).toLocaleString(
   DateTime.DATETIME_HUGE_WITH_SECONDS
 );
-const hasRaffleTicketCutoffPassed = DateTime.local() > DateTime.fromSQL(
+const hasRaffleTicketCutoffPassed = DateTime.local() > DateTime.fromISO(
   globalSettings
     .last_day_for_online_raffle_ticket_sale
 );
